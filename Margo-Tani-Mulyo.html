@@ -26,11 +26,39 @@
   <style>
         body {
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
         
-        .hero-bg {
+        .hero-gradient {
             background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #059669, #F59E0B);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #059669;
+        }
+        
+        .nav-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #059669;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover .nav-underline {
+            width: 100%;
         }
         
         .floating-stats {
@@ -47,34 +75,25 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
+        .service-nav-item {
+            transition: background-color 0.3s ease;
         }
         
-        .nav-link:hover {
-            color: #059669;
+        .service-nav-item:hover {
+            background-color: rgba(249, 115, 22, 0.1);
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
+        .service-nav-item.active {
+            background-color: rgba(249, 115, 22, 0.1);
+        }
+        
+        .service-nav-item .nav-dot {
             background-color: #059669;
-            transition: width 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .accent-line {
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #059669, #F59E0B);
+        .service-nav-item.active .nav-dot {
+            background-color: #F59E0B;
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -90,12 +109,17 @@
        🏭 Margo Tani <span class="text-primary-green">Mulyo</span>
       </div>
      </div>
-     <div class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-link text-gray-700 font-medium">Beranda</a> <a href="#about" class="nav-link text-gray-700 font-medium">Tentang Kami</a> <a href="#products" class="nav-link text-gray-700 font-medium">Produk</a> <a href="#benefits" class="nav-link text-gray-700 font-medium">Keunggulan</a> <a href="#contact" class="nav-link text-gray-700 font-medium">Kontak</a>
+     <div class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-link text-gray-700 font-medium"> Beranda 
+       <div class="nav-underline"></div></a> <a href="#about" class="nav-link text-gray-700 font-medium"> Tentang Kami 
+       <div class="nav-underline"></div></a> <a href="#products" class="nav-link text-gray-700 font-medium"> Produk 
+       <div class="nav-underline"></div></a> <a href="#benefits" class="nav-link text-gray-700 font-medium"> Keunggulan 
+       <div class="nav-underline"></div></a> <a href="#contact" class="nav-link text-gray-700 font-medium"> Kontak 
+       <div class="nav-underline"></div></a>
      </div><button class="bg-primary-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg"> HUBUNGI KAMI </button>
     </div>
    </nav>
   </header><!-- Hero Section -->
-  <section id="home" class="hero-bg pt-24 pb-16 min-h-full">
+  <section id="home" class="hero-gradient pt-24 pb-16 min-h-full">
    <div class="container mx-auto px-6">
     <div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Left Content -->
      <div class="space-y-8">
@@ -108,14 +132,14 @@
       <div class="bg-white rounded-xl p-6 shadow-lg">
        <h3 class="text-xl font-semibold text-secondary-blue mb-4">🔥 Produk Kami</h3>
        <div class="space-y-3">
-        <div class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
-         <div class="w-2 h-2 bg-primary-green rounded-full"></div><span class="text-gray-700 font-medium">Green Petroleum Coke</span>
+        <div class="service-nav-item flex items-center space-x-3 p-3 rounded-lg cursor-pointer">
+         <div class="nav-dot w-2 h-2 rounded-full"></div><span class="text-gray-700 font-medium">Green Petroleum Coke</span>
         </div>
-        <div class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
-         <div class="w-2 h-2 bg-primary-green rounded-full"></div><span class="text-gray-700 font-medium">Calcined Petroleum Coke (CPC)</span>
+        <div class="service-nav-item flex items-center space-x-3 p-3 rounded-lg cursor-pointer">
+         <div class="nav-dot w-2 h-2 rounded-full"></div><span class="text-gray-700 font-medium">Calcined Petroleum Coke (CPC)</span>
         </div>
-        <div class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
-         <div class="w-2 h-2 bg-primary-green rounded-full"></div><span class="text-gray-700 font-medium">Fuel Grade Coke</span>
+        <div class="service-nav-item flex items-center space-x-3 p-3 rounded-lg cursor-pointer">
+         <div class="nav-dot w-2 h-2 rounded-full"></div><span class="text-gray-700 font-medium">Fuel Grade Coke</span>
         </div>
        </div>
       </div>
@@ -123,7 +147,7 @@
      <div class="relative">
       <div class="space-y-6">
        <p class="text-gray-600 text-lg leading-relaxed">Margo Tani Mulyo adalah produsen petroleum coke (kokas minyak bumi) berbasis di Kedewan, Bojonegoro. Kami mengolah residu berat dari minyak mentah menjadi sumber energi padat dengan nilai kalor tinggi — alternatif batu bara yang lebih efisien dan tahan lama.</p><!-- Hero Image -->
-       <div class="relative"><img src="tugu/foto1.png" alt="Fasilitas Produksi Petroleum Coke" class="w-full h-80 object-cover rounded-xl shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+       <div class="relative"><img src="tugu/foto1.png" alt="Fasilitas Produksi Petroleum Coke" class="w-full h-80 object-cover rounded-xl shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="bg-gray-300 rounded-xl h-80 flex items-center justify-center" style="display: none;">
          <div class="text-center text-gray-600">
           <div class="text-4xl mb-2">
@@ -187,7 +211,7 @@
       </div><button class="bg-primary-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg flex items-center space-x-2"> <span>Pelajari Lebih Lanjut</span>
        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
        </svg></button> <!-- Team Photo -->
-      <div class="relative mt-8"><img src="tugu/foto2.png" alt="Kemitraan Industri Energi" class="w-full h-64 object-cover rounded-xl shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+      <div class="relative mt-8"><img src="tugu/foto2.png" alt="Kemitraan Industri Energi" class="w-full h-64 object-cover rounded-xl shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
        <div class="bg-gray-300 rounded-xl h-64 flex items-center justify-center" style="display: none;">
         <div class="text-center text-gray-600">
          <div class="text-4xl mb-2">
@@ -207,33 +231,84 @@
       <p class="text-gray-200 leading-relaxed mb-8">Kami menyadari bahwa setiap ton limbah minyak yang tidak diolah adalah potensi kerusakan tanah dan udara. Karena itu, setiap proses kami dirancang untuk mengurangi emisi, menstabilkan kandungan sulfur, dan memaksimalkan daur ulang energi.</p><!-- Portrait Photos -->
       <div class="flex justify-center mb-6">
        <div class="flex space-x-6">
-        <div class="transform rotate-2"><img src="tugu/foto6.png" alt="Tim Margo Tani Mulyo" class="w-24 h-32 object-cover rounded-lg shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+        <div class="transform rotate-2"><img src="tugu/foto6.png" alt="Tim Margo Tani Mulyo" class="w-24 h-32 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
          <div class="bg-gray-300 rounded-lg w-24 h-32 flex items-center justify-center" style="display: none;">
           <div class="text-center text-gray-600 text-sm">
            <div class="text-3xl mb-2">
             👤
            </div>
-           <p class="font-medium">tugu/foto6.png</p>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto6.png</p>
           </div>
          </div>
         </div>
-        <div class="transform -rotate-1 mt-2"><img src="tugu/foto7.png" alt="Tim Margo Tani Mulyo" class="w-24 h-32 object-cover rounded-lg shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+        <div class="transform -rotate-1 mt-2"><img src="tugu/foto7.png" alt="Tim Margo Tani Mulyo" class="w-24 h-32 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
          <div class="bg-gray-300 rounded-lg w-24 h-32 flex items-center justify-center" style="display: none;">
           <div class="text-center text-gray-600 text-sm">
            <div class="text-3xl mb-2">
             👤
            </div>
-           <p class="font-medium">tugu/foto7.png</p>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto7.png</p>
           </div>
          </div>
         </div>
-        <div class="transform rotate-1 mt-1"><img src="tugu/foto8.png" alt="Tim Margo Tani Mulyo" class="w-24 h-32 object-cover rounded-lg shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+        <div class="transform rotate-1 mt-1"><img src="tugu/foto8.png" alt="Tim Margo Tani Mulyo" class="w-24 h-32 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
          <div class="bg-gray-300 rounded-lg w-24 h-32 flex items-center justify-center" style="display: none;">
           <div class="text-center text-gray-600 text-sm">
            <div class="text-3xl mb-2">
             👤
            </div>
-           <p class="font-medium">tugu/foto8.png</p>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto8.png</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Additional Team Photos -->
+      <div class="flex justify-center mb-6">
+       <div class="grid grid-cols-4 gap-4">
+        <div class="transform -rotate-2"><img src="tugu/foto9.jpeg" alt="Tim Margo Tani Mulyo" class="w-28 h-28 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+         <div class="bg-gray-300 rounded-lg w-28 h-28 flex items-center justify-center" style="display: none;">
+          <div class="text-center text-gray-600 text-xs">
+           <div class="text-2xl mb-1">
+            👤
+           </div>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto9.jpeg</p>
+          </div>
+         </div>
+        </div>
+        <div class="transform rotate-3 mt-3"><img src="tugu/foto10.jpeg" alt="Tim Margo Tani Mulyo" class="w-28 h-28 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+         <div class="bg-gray-300 rounded-lg w-28 h-28 flex items-center justify-center" style="display: none;">
+          <div class="text-center text-gray-600 text-xs">
+           <div class="text-2xl mb-1">
+            👤
+           </div>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto10.jpeg</p>
+          </div>
+         </div>
+        </div>
+        <div class="transform -rotate-1 mt-1"><img src="tugu/foto11.jpeg" alt="Tim Margo Tani Mulyo" class="w-28 h-28 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+         <div class="bg-gray-300 rounded-lg w-28 h-28 flex items-center justify-center" style="display: none;">
+          <div class="text-center text-gray-600 text-xs">
+           <div class="text-2xl mb-1">
+            👤
+           </div>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto11.jpeg</p>
+          </div>
+         </div>
+        </div>
+        <div class="transform rotate-2 mt-4"><img src="tugu/foto12.jpeg" alt="Tim Margo Tani Mulyo" class="w-28 h-28 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+         <div class="bg-gray-300 rounded-lg w-28 h-28 flex items-center justify-center" style="display: none;">
+          <div class="text-center text-gray-600 text-xs">
+           <div class="text-2xl mb-1">
+            👤
+           </div>
+           <p class="font-medium">Tim Margo Tani Mulyo</p>
+           <p class="text-xs">tugu/foto12.jpeg</p>
           </div>
          </div>
         </div>
@@ -257,7 +332,7 @@
     </div>
     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8"><!-- Product Card 1 -->
      <div class="service-card bg-white rounded-xl p-8 shadow-lg">
-      <div class="mb-6"><img src="tugu/foto3.png" alt="Green Petroleum Coke" class="w-full h-48 object-cover rounded-lg shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+      <div class="mb-6"><img src="tugu/foto3.png" alt="Green Petroleum Coke" class="w-full h-48 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
        <div class="bg-gray-300 rounded-lg h-48 flex items-center justify-center" style="display: none;">
         <div class="text-center text-gray-600">
          <div class="text-4xl mb-2">
@@ -275,7 +350,7 @@
        </svg></button>
      </div><!-- Product Card 2 -->
      <div class="service-card bg-white rounded-xl p-8 shadow-lg">
-      <div class="mb-6"><img src="tugu/foto4.png" alt="Calcined Petroleum Coke" class="w-full h-48 object-cover rounded-lg shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+      <div class="mb-6"><img src="tugu/foto4.png" alt="Calcined Petroleum Coke" class="w-full h-48 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
        <div class="bg-gray-300 rounded-lg h-48 flex items-center justify-center" style="display: none;">
         <div class="text-center text-gray-600">
          <div class="text-4xl mb-2">
@@ -293,7 +368,7 @@
        </svg></button>
      </div><!-- Product Card 3 -->
      <div class="service-card bg-white rounded-xl p-8 shadow-lg">
-      <div class="mb-6"><img src="tugu/foto5.png" alt="Fuel Grade Coke" class="w-full h-48 object-cover rounded-lg shadow-lg" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+      <div class="mb-6"><img src="tugu/foto5.png" alt="Fuel Grade Coke" class="w-full h-48 object-cover rounded-lg shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
        <div class="bg-gray-300 rounded-lg h-48 flex items-center justify-center" style="display: none;">
         <div class="text-center text-gray-600">
          <div class="text-4xl mb-2">
@@ -312,8 +387,83 @@
      </div>
     </div>
    </div>
+  </section><!-- Lab Results Section -->
+  <section id="lab-results" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <p class="text-primary-green font-semibold text-lg mb-2">🔬 Hasil Uji Laboratorium</p>
+     <h2 class="text-4xl font-bold text-secondary-blue mb-4">Kualitas Terjamin Melalui Pengujian Ilmiah</h2>
+     <div class="accent-line mx-auto"></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Left Content -->
+     <div class="space-y-6">
+      <p class="text-gray-600 text-lg leading-relaxed">Produk petroleum coke Margo Tani Mulyo telah melalui serangkaian pengujian laboratorium untuk memastikan mutu dan konsistensi kualitas. Dari hasil uji, kandungan karbon tetap mencapai 90,96%, dengan kadar abu dan sulfur yang masih dalam batas aman untuk kebutuhan industri. Struktur partikel juga menunjukkan distribusi yang stabil, menjadikan produk kami efisien, mudah terbakar merata, dan memiliki daya tahan panas tinggi.</p><!-- Quality Indicators -->
+      <div class="grid grid-cols-2 gap-4">
+       <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+        <div class="text-2xl text-primary-green mb-2">
+         ✓
+        </div>
+        <h4 class="font-semibold text-secondary-blue mb-1">Kandungan Karbon</h4>
+        <p class="text-sm text-gray-600">Mencapai 90,96%</p>
+       </div>
+       <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+        <div class="text-2xl text-blue-600 mb-2">
+         ✓
+        </div>
+        <h4 class="font-semibold text-secondary-blue mb-1">Kadar Abu &amp; Sulfur</h4>
+        <p class="text-sm text-gray-600">Dalam batas aman industri</p>
+       </div>
+       <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+        <div class="text-2xl text-accent-orange mb-2">
+         ✓
+        </div>
+        <h4 class="font-semibold text-secondary-blue mb-1">Struktur Partikel</h4>
+        <p class="text-sm text-gray-600">Distribusi stabil</p>
+       </div>
+       <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+        <div class="text-2xl text-primary-green mb-2">
+         ✓
+        </div>
+        <h4 class="font-semibold text-secondary-blue mb-1">Daya Tahan Panas</h4>
+        <p class="text-sm text-gray-600">Tinggi dan efisien</p>
+       </div>
+      </div>
+      <div class="bg-secondary-blue p-6 rounded-lg text-white">
+       <p class="text-lg font-semibold mb-2">🏆 Sertifikasi Kualitas</p>
+       <p class="text-gray-200">Hasil ini menegaskan bahwa petroleum coke dari Margo Tani Mulyo layak digunakan sebagai bahan bakar alternatif industri yang handal, efisien, dan berdaya saing tinggi.</p>
+      </div>
+     </div><!-- Right Content - Lab Results Image -->
+     <div class="relative">
+      <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-lg border border-gray-200"><img src="tugu/hasillab.jpeg" alt="Hasil Uji Laboratorium Petroleum Coke" class="w-full max-w-md mx-auto rounded-lg shadow-md border border-gray-300" style="aspect-ratio: 872/793; object-fit: contain;" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="bg-gray-200 rounded-lg flex items-center justify-center border border-gray-300" style="display: none; aspect-ratio: 872/793; max-width: 28rem; margin: 0 auto;">
+        <div class="text-center text-gray-600">
+         <div class="text-4xl mb-2">
+          🔬
+         </div>
+         <p class="font-medium">Hasil Uji Laboratorium Petroleum Coke</p>
+         <p class="text-sm">tugu/hasillab.jpeg</p>
+         <p class="text-xs text-gray-500 mt-1">872 x 793 px</p>
+        </div>
+       </div><!-- Lab Badge -->
+       <div class="absolute -top-4 -right-4 bg-primary-green text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
+        Lab Certified ✓
+       </div>
+      </div><!-- Floating Lab Stats -->
+      <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
+       <div class="text-center">
+        <div class="text-2xl font-bold text-accent-orange">
+         100%
+        </div>
+        <div class="text-xs text-gray-600">
+         Teruji Laboratorium
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
   </section><!-- Benefits Section -->
-  <section id="benefits" class="py-20 bg-white">
+  <section id="benefits" class="py-20 bg-gray-50">
    <div class="container mx-auto px-6">
     <div class="text-center mb-16">
      <p class="text-primary-green font-semibold text-lg mb-2">🌱 Manfaat &amp; Keunggulan</p>
@@ -365,6 +515,79 @@
      </div>
     </div>
    </div>
+  </section><!-- Legalitas Section -->
+  <section id="legalitas" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <p class="text-primary-green font-semibold text-lg mb-2">📋 Legalitas Perusahaan</p>
+     <h2 class="text-4xl font-bold text-secondary-blue mb-4">Terdaftar Resmi &amp; Beroperasi Legal</h2>
+     <div class="accent-line mx-auto"></div>
+    </div>
+    <div class="space-y-12"><!-- Top Content - Company Info -->
+     <div class="bg-green-50 p-8 rounded-xl border border-green-200 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-secondary-blue mb-6 text-center">📄 Akta Pendirian Usaha</h3>
+      <p class="text-gray-600 leading-relaxed mb-6 text-center max-w-3xl mx-auto">Margo Tani Mulyo telah terdaftar secara resmi sebagai badan usaha yang bergerak di bidang pengolahan petroleum coke. Akta pendirian kami mencakup izin operasional untuk mengolah limbah minyak bumi menjadi produk energi bernilai tinggi.</p>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+       <div class="bg-white p-4 rounded-lg">
+        <p class="text-sm text-gray-500 mb-1">Status</p>
+        <p class="font-semibold text-secondary-blue">Badan Usaha Terdaftar</p>
+       </div>
+       <div class="bg-white p-4 rounded-lg">
+        <p class="text-sm text-gray-500 mb-1">Bidang Usaha</p>
+        <p class="font-semibold text-secondary-blue">Pengolahan Petroleum Coke</p>
+       </div>
+       <div class="bg-white p-4 rounded-lg">
+        <p class="text-sm text-gray-500 mb-1">Lokasi</p>
+        <p class="font-semibold text-secondary-blue">Ds. Beji, Kedewan, Bojonegoro</p>
+       </div>
+      </div>
+     </div><!-- Main Content Grid -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Left - Document 1 -->
+      <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden"><img src="tugu/akta1.png" alt="Akta Pendirian Usaha Margo Tani Mulyo" class="w-full object-cover" style="aspect-ratio: 21/29;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+       <div class="bg-gray-300 items-center justify-center text-center text-gray-600 p-8" style="display: none;">
+        <div>
+         <div class="text-5xl mb-4">
+          📄
+         </div>
+         <p class="font-medium text-lg">Akta Pendirian Usaha</p>
+         <p class="text-sm">tugu/akta1.png</p>
+        </div>
+       </div>
+      </div><!-- Center - Document 2 -->
+      <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden"><img src="tugu/akta2.png" alt="Dokumen Legalitas Margo Tani Mulyo" class="w-full object-cover" style="aspect-ratio: 21/29;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+       <div class="bg-gray-300 items-center justify-center text-center text-gray-600 p-8" style="display: none;">
+        <div>
+         <div class="text-5xl mb-4">
+          📋
+         </div>
+         <p class="font-medium text-lg">Dokumen Legalitas</p>
+         <p class="text-sm">tugu/akta2.png</p>
+        </div>
+       </div>
+      </div><!-- Right - Map -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden md:col-span-2 lg:col-span-1">
+       <div class="p-4 bg-gray-50 border-b">
+        <h4 class="font-semibold text-secondary-blue text-center">🗺️ Lokasi Perusahaan</h4>
+       </div>
+       <div class="relative w-full rounded-lg overflow-hidden aspect-square"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.123456789!2d111.123456!3d-7.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnMjQuNCJTIDExMcKwMDcnMjQuNCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Margo Tani Mulyo - Ds. Beji, Kedewan, Bojonegoro"> </iframe>
+       </div>
+       <div class="p-4 text-center"><a href="https://maps.app.goo.gl/a6R4BBCkXmKKd59X9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-primary-green text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 shadow-lg text-sm">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+         </svg><span>Buka Maps</span> </a>
+       </div><!-- Commitment Section - Now below maps -->
+       <div class="bg-secondary-blue p-6 text-white">
+        <div class="flex items-center justify-center space-x-3 mb-3">
+         <div class="text-2xl">
+          ✅
+         </div>
+         <h4 class="font-bold text-lg">Komitmen Transparansi</h4>
+        </div>
+        <p class="text-gray-200 text-center leading-relaxed text-sm">Kami beroperasi dengan transparansi penuh dan mematuhi seluruh regulasi pemerintah terkait pengolahan limbah industri dan produksi energi alternatif.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
   </section><!-- Footer -->
   <footer id="contact" class="bg-secondary-blue text-white py-16">
    <div class="container mx-auto px-6">
@@ -400,7 +623,7 @@
      <div class="space-y-4">
       <h4 class="text-lg font-semibold">📞 Kontak</h4>
       <div class="space-y-2 text-gray-300">
-       <p>📍 Kedewan, Bojonegoro</p>
+       <p>📍 Ds. Beji 002/001, Kecamatan Kedewan, Kabupaten Bojonegoro, Jawa Timur</p>
        <p>📧 b.taneeindonesia@gmail.com</p>
        <p class="text-sm text-gray-400 mt-4">Hubungi kami untuk kebutuhan petroleum coke berkualitas tinggi</p>
       </div><a href="https://wa.me/+6281234567890" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg mt-4">
@@ -418,47 +641,45 @@
   </footer>
   <script>
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    header.style.backdropFilter = 'blur(4px)';
+                } else {
+                    header.style.backgroundColor = 'white';
+                    header.style.backdropFilter = 'none';
                 }
             });
-        });
 
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('bg-white/95');
-                header.classList.add('backdrop-blur-sm');
-            } else {
-                header.classList.remove('bg-white/95');
-                header.classList.remove('backdrop-blur-sm');
-            }
-        });
-
-        // Service navigation interaction
-        document.querySelectorAll('.space-y-3 > div').forEach(item => {
-            item.addEventListener('click', function() {
-                // Remove active state from all items
-                document.querySelectorAll('.space-y-3 > div').forEach(el => {
-                    el.classList.remove('bg-primary-orange/10');
-                    el.querySelector('.w-2').classList.remove('bg-accent-yellow');
-                    el.querySelector('.w-2').classList.add('bg-primary-orange');
+            // Service navigation interaction
+            document.querySelectorAll('.service-nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active state from all items
+                    document.querySelectorAll('.service-nav-item').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    
+                    // Add active state to clicked item
+                    this.classList.add('active');
                 });
-                
-                // Add active state to clicked item
-                this.classList.add('bg-primary-orange/10');
-                this.querySelector('.w-2').classList.remove('bg-primary-orange');
-                this.querySelector('.w-2').classList.add('bg-accent-yellow');
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991ecfc805993ef7',t:'MTc2MTAyOTMzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'993fd7bad5f045e2',t:'MTc2MTM3NTY4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

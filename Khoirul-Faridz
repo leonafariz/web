@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khoirul Faridz - Desainer Grafis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+    
+    .star-rating {
+      color: #fbbf24;
+    }
+    
+    .wave-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .particles::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 60%;
+      background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.25) 3px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 4px, transparent 4px);
+      background-size: 150px 150px, 100px 100px, 200px 200px;
+      background-position: 0 0, 50px 50px, 100px 20px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    .particles::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35%;
+      height: 50%;
+      background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.2) 3px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.25) 2px, transparent 2px);
+      background-size: 120px 120px, 90px 90px;
+      background-position: 0 0, 40px 40px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+    
+    .star:nth-child(2n) {
+      animation-duration: 2s;
+      animation-delay: 0.5s;
+    }
+    
+    .star:nth-child(3n) {
+      animation-duration: 4s;
+      animation-delay: 1s;
+    }
+    
+    .star:nth-child(4n) {
+      width: 3px;
+      height: 3px;
+      animation-duration: 2.5s;
+      animation-delay: 1.5s;
+    }
+    
+    .star:nth-child(5n) {
+      width: 1px;
+      height: 1px;
+      animation-duration: 3.5s;
+      animation-delay: 0.8s;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+    
+    .wave-separator {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FFFFFF'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+      z-index: 2;
+    }
+    
+    .gradient-purple-bg {
+      background: linear-gradient(135deg, #6A1B9A 0%, #AB47BC 50%, #CE93D8 100%);
+    }
+    
+    .connection-circle {
+      position: relative;
+    }
+    
+    .connection-circle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    #carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full w-full overflow-auto">
+  <div class="w-full h-full" style="background: #f8f9fa;"><!-- Navigation -->
+   <nav class="w-full py-4 px-6 fixed top-0 z-50" id="navbar" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(106,27,154,0.1);">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+     <div class="font-bold text-xl" id="nav-logo" style="color: #6A1B9A;">
+      KF
+     </div>
+     <div class="flex gap-8"><a href="#home" class="hover:opacity-70 transition-opacity" style="color: #6A1B9A; font-weight: 500;">Home</a> <a href="#about" class="hover:opacity-70 transition-opacity" style="color: #6A1B9A; font-weight: 500;">Portfolio</a> <a href="#services" class="hover:opacity-70 transition-opacity" style="color: #6A1B9A; font-weight: 500;">Services</a> <a href="#tools" class="hover:opacity-70 transition-opacity" style="color: #6A1B9A; font-weight: 500;">Tools</a> <a href="#contact" class="hover:opacity-70 transition-opacity" style="color: #6A1B9A; font-weight: 500;">Contact</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="w-full gradient-purple-bg particles" style="min-height: 50vh; padding: 120px 10% 0 10%; position: relative;">
+    <div class="stars" id="hero-stars"></div>
+    <div class="wave-separator"></div>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center" style="position: relative; z-index: 3; padding-bottom: 100px;">
+     <div>
+      <h1 class="font-bold mb-4" id="hero-title" style="font-size: 3rem; line-height: 1.2; color: #FFFFFF;">Hai, Saya Khoirul Faridz</h1>
+      <h2 class="font-semibold mb-6" id="hero-subtitle" style="font-size: 1.5rem; color: #E3F5FF;">Desainer Grafis Spesialis Visual Branding &amp; Media Digital</h2>
+      <p class="mb-8 leading-relaxed" id="hero-description" style="font-size: 1.125rem; color: #FFFFFF; opacity: 0.9;">Saya seorang desainer grafis yang berfokus pada visual branding dan media digital. Saya terbiasa mengolah ide menjadi tampilan visual yang komunikatif, relevan dengan target audiens, serta memiliki nilai estetika yang kuat. Bagi saya, desain bukan hanya soal tampilan, tetapi juga tentang pesan dan identitas.</p>
+      <div class="flex gap-4"><a href="#services" class="px-8 py-4 rounded-full font-semibold transition-all hover:shadow-lg" style="background: #FFFFFF; color: #6A1B9A; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">Lihat Keahlian Saya</a> <a href="#contact" class="px-8 py-4 rounded-full font-semibold transition-all hover:bg-opacity-90" style="background: rgba(255, 255, 255, 0.2); color: #FFFFFF; border: 2px solid #FFFFFF; backdrop-filter: blur(10px);">Hubungi Saya</a>
+      </div>
+     </div>
+     <div class="flex justify-center" style="position: relative;"><!-- Main profile circle -->
+      <div style="position: relative; width: 350px; height: 350px;"><!-- SVG for connecting lines (behind circles) -->
+       <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" viewbox="0 0 350 350"><!-- Lines connecting center to each small circle --> <line x1="175" y1="175" x2="75" y2="55" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="5,5" /> <line x1="175" y1="175" x2="295" y2="95" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="5,5" /> <line x1="175" y1="175" x2="275" y2="255" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="5,5" /> <line x1="175" y1="175" x2="55" y2="255" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="5,5" /> <!-- Lines connecting small circles to each other (constellation style) --> <line x1="75" y1="55" x2="295" y2="95" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4,4" /> <line x1="295" y1="95" x2="275" y2="255" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4,4" /> <line x1="275" y1="255" x2="55" y2="255" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4,4" /> <line x1="55" y1="255" x2="75" y2="55" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4,4" />
+       </svg><!-- Center large circle -->
+       <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255,255,255,0.5); box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 3;"><img src="Faridz/foto1.png" alt="Khoirul Faridz - Desainer Grafis Profesional" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src=''; this.alt='Foto profil gagal dimuat'; this.style.background='linear-gradient(135deg, #7B1FA2 0%, #CE93D8 100%)'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center';">
+       </div><!-- Small orbit circles --> <!-- Top-Left -->
+       <div style="position: absolute; top: 20px; left: 40px; width: 70px; height: 70px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); z-index: 2;"><img src="Faridz/foto2.png" alt="Portfolio Khoirul Faridz" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #512DA8 0%, #AB47BC 100%)';">
+       </div><!-- Top-Right -->
+       <div style="position: absolute; top: 60px; right: 20px; width: 70px; height: 70px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); z-index: 2;"><img src="Faridz/foto3.png" alt="Karya Desain Khoirul Faridz" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #AB47BC 0%, #CE93D8 100%)';">
+       </div><!-- Bottom-Right -->
+       <div style="position: absolute; bottom: 60px; right: 40px; width: 70px; height: 70px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); z-index: 2;"><img src="Faridz/foto4.png" alt="Proyek Branding Khoirul Faridz" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%)';">
+       </div><!-- Bottom-Left -->
+       <div style="position: absolute; bottom: 60px; left: 20px; width: 70px; height: 70px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); z-index: 2;"><img src="Faridz/foto5.png" alt="Logo Design Khoirul Faridz" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #512DA8 0%, #7B1FA2 100%)';">
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Portfolio Section -->
+   <section id="about" class="w-full py-24" style="background: #FFFFFF; padding-left: 10%; padding-right: 10%;">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="font-bold text-center mb-4" id="about-title" style="font-size: 2.5rem; color: #6A1B9A;">Portofolio Saya</h2>
+     <p class="text-center mb-12" style="font-size: 1.125rem; color: #666666;">Lihat beberapa karya desain terbaik saya</p><!-- Carousel Container -->
+     <div style="position: relative; padding: 20px 0;"><!-- Carousel Track -->
+      <div id="carousel-track" style="display: flex; gap: 24px; overflow-x: auto; scroll-behavior: smooth; padding: 0 20px 20px 20px; scrollbar-width: none; -ms-overflow-style: none;"><!-- Instagram Post 1 -->
+       <div style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;"><iframe src="https://www.instagram.com/p/C7icowpyHQs/embed" style="width: 100%; height: 500px; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" scrolling="no" allowtransparency="true"></iframe>
+       </div><!-- Instagram Post 2 -->
+       <div style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;"><iframe src="https://www.instagram.com/p/C7qMAeQSvbI/embed" style="width: 100%; height: 500px; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" scrolling="no" allowtransparency="true"></iframe>
+       </div><!-- Instagram Post 3 -->
+       <div style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;"><iframe src="https://www.instagram.com/p/C7tIMLtyWCk/embed" style="width: 100%; height: 500px; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" scrolling="no" allowtransparency="true"></iframe>
+       </div><!-- Instagram Post 4 -->
+       <div style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;"><iframe src="https://www.instagram.com/p/C7usRP6S844/embed" style="width: 100%; height: 500px; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" scrolling="no" allowtransparency="true"></iframe>
+       </div><!-- Instagram Post 5 -->
+       <div style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;"><iframe src="https://www.instagram.com/p/C7vF9T4yqGf/embed" style="width: 100%; height: 500px; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" scrolling="no" allowtransparency="true"></iframe>
+       </div><!-- Instagram Post 6 -->
+       <div style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;"><iframe src="https://www.instagram.com/p/C71tJ41S-8n/embed" style="width: 100%; height: 500px; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" scrolling="no" allowtransparency="true"></iframe>
+       </div>
+      </div><!-- Navigation Buttons --> <button id="prev-btn" style="position: absolute; left: 0; top: 45%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; background: rgba(106, 27, 154, 0.9); color: white; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; z-index: 10; transition: all 0.3s ease;">
+       <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" />
+       </svg></button> <button id="next-btn" style="position: absolute; right: 0; top: 45%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; background: rgba(106, 27, 154, 0.9); color: white; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; z-index: 10; transition: all 0.3s ease;">
+       <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" />
+       </svg></button> <!-- Progress Bar -->
+      <div style="width: 100%; height: 4px; background: #E0E0E0; border-radius: 2px; margin-top: 30px; overflow: hidden;">
+       <div id="progress-bar" style="height: 100%; background: linear-gradient(90deg, #6A1B9A 0%, #AB47BC 100%); width: 50%; transition: width 0.3s ease; border-radius: 2px;"></div>
+      </div>
+     </div>
+     <div class="text-center mt-12"><a href="https://instagram.com/qwelstd" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 rounded-full font-semibold transition-all hover:opacity-90" style="background: #6A1B9A; color: white; box-shadow: 0 4px 15px rgba(106,27,154,0.3);">Lihat Lebih Banyak di Instagram</a>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section id="services" class="w-full py-24 gradient-purple-bg particles" style="position: relative; padding-left: 10%; padding-right: 10%;">
+    <div class="stars" id="services-stars"></div>
+    <div class="wave-separator"></div>
+    <div class="max-w-6xl mx-auto" style="position: relative; z-index: 3; padding-bottom: 100px;">
+     <h2 class="font-bold text-center mb-4" style="font-size: 2.5rem; color: #FFFFFF;">Keahlian Saya</h2>
+     <p class="text-center mb-16 max-w-2xl mx-auto" style="font-size: 1.125rem; color: #CE93D8;">Saya spesialisasi dalam menciptakan visual yang mendukung identitas brand Anda</p>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Service Card 1 -->
+      <div class="p-8 card-hover" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+       <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);">
+        <svg class="w-8 h-8" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <h3 class="font-bold mb-3" style="font-size: 1.5rem; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">Branding &amp; Visual Identity</h3>
+       <p style="color: #FFFFFF; line-height: 1.6; opacity: 0.9;">Membuat sistem visual lengkap, termasuk guideline brand untuk konsistensi jangka panjang.</p>
+      </div><!-- Service Card 2 -->
+      <div class="p-8 card-hover" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+       <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);">
+        <svg class="w-8 h-8" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+       </div>
+       <h3 class="font-bold mb-3" style="font-size: 1.5rem; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">Desain Logo</h3>
+       <p style="color: #FFFFFF; line-height: 1.6; opacity: 0.9;">Logo unik yang sederhana, memorable, dan scalable untuk berbagai media.</p>
+      </div><!-- Service Card 3 -->
+      <div class="p-8 card-hover" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+       <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);">
+        <svg class="w-8 h-8" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewbox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M9 3v18M15 3v18" />
+        </svg>
+       </div>
+       <h3 class="font-bold mb-3" style="font-size: 1.5rem; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">Poster &amp; Flyer</h3>
+       <p style="color: #FFFFFF; line-height: 1.6; opacity: 0.9;">Desain promosi yang eye-catching untuk event, produk, atau kampanye.</p>
+      </div><!-- Service Card 4 -->
+      <div class="p-8 card-hover" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+       <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);">
+        <svg class="w-8 h-8" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewbox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" /> <path d="M8 21h8M12 17v4" />
+        </svg>
+       </div>
+       <h3 class="font-bold mb-3" style="font-size: 1.5rem; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">Publikasi Digital</h3>
+       <p style="color: #FFFFFF; line-height: 1.6; opacity: 0.9;">Konten sosial media, banner web, infografis, dan materi digital yang optimized.</p>
+      </div><!-- Service Card 5 -->
+      <div class="p-8 card-hover" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+       <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);">
+        <svg class="w-8 h-8" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+       </div>
+       <h3 class="font-bold mb-3" style="font-size: 1.5rem; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">Layout Sederhana</h3>
+       <p style="color: #FFFFFF; line-height: 1.6; opacity: 0.9;">Untuk kebutuhan organisasi, event, brosur, atau company profile.</p>
+      </div><!-- Service Card 6 -->
+      <div class="p-8 card-hover" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+       <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);">
+        <svg class="w-8 h-8" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="font-bold mb-3" style="font-size: 1.5rem; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">Full Support</h3>
+       <p style="color: #FFFFFF; line-height: 1.6; opacity: 0.9;">Dari konsep awal hingga revisi final, dengan fokus pada brief dan deadline.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Tools Section -->
+   <section id="tools" class="w-full py-24" style="background: #FFFFFF; padding-left: 10%; padding-right: 10%;">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="font-bold text-center mb-4" style="font-size: 2.5rem; color: #6A1B9A;">Tools yang Saya Gunakan</h2>
+     <p class="text-center mb-12" style="font-size: 1.125rem; color: #666666;">Menguasai berbagai tools untuk menghasilkan desain berkualitas tinggi</p>
+     <div class="grid md:grid-cols-2 gap-6"><!-- Tool 1 -->
+      <div class="p-6 flex gap-4" style="background: #FFFFFF; border-radius: 15px; border-left: 4px solid #7B1FA2; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+       <div style="flex-shrink: 0;"><img src="Faridz/foto2.png" alt="Adobe Illustrator - Tool Desain Vector Profesional" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #512DA8 0%, #AB47BC 100%)';">
+       </div>
+       <div style="flex: 1;">
+        <h3 class="font-bold mb-2" style="font-size: 1.25rem; color: #6A1B9A;">Adobe Illustrator</h3>
+        <p class="mb-3" style="color: #4a5568; font-size: 0.95rem;">Untuk vector dan logo presisi tinggi</p>
+        <div class="flex items-center justify-between">
+         <div class="flex gap-1 star-rating"><span>★★★★</span><span style="opacity: 0.8;">★</span>
+         </div><span class="px-3 py-1 rounded-full text-sm font-semibold" style="background: rgba(123, 31, 162, 0.15); color: #6A1B9A;">4.8/5</span>
+        </div>
+       </div>
+      </div><!-- Tool 2 -->
+      <div class="p-6 flex gap-4" style="background: #FFFFFF; border-radius: 15px; border-left: 4px solid #7B1FA2; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+       <div style="flex-shrink: 0;"><img src="Faridz/foto3.png" alt="Adobe Photoshop - Tool Editing Foto dan Manipulasi Gambar" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #AB47BC 0%, #CE93D8 100%)';">
+       </div>
+       <div style="flex: 1;">
+        <h3 class="font-bold mb-2" style="font-size: 1.25rem; color: #6A1B9A;">Adobe Photoshop</h3>
+        <p class="mb-3" style="color: #4a5568; font-size: 0.95rem;">Editing foto dan manipulasi gambar kompleks</p>
+        <div class="flex items-center justify-between">
+         <div class="flex gap-1 star-rating"><span>★★★★</span><span style="opacity: 0.6;">★</span>
+         </div><span class="px-3 py-1 rounded-full text-sm font-semibold" style="background: rgba(123, 31, 162, 0.15); color: #6A1B9A;">4.6/5</span>
+        </div>
+       </div>
+      </div><!-- Tool 3 -->
+      <div class="p-6 flex gap-4" style="background: #FFFFFF; border-radius: 15px; border-left: 4px solid #7B1FA2; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+       <div style="flex-shrink: 0;"><img src="Faridz/foto4.png" alt="Canva - Tool Desain Cepat untuk Konten Digital" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%)';">
+       </div>
+       <div style="flex: 1;">
+        <h3 class="font-bold mb-2" style="font-size: 1.25rem; color: #6A1B9A;">Canva</h3>
+        <p class="mb-3" style="color: #4a5568; font-size: 0.95rem;">Cepat untuk prototype dan konten sosial media</p>
+        <div class="flex items-center justify-between">
+         <div class="flex gap-1 star-rating"><span>★★★★</span><span style="opacity: 0.7;">★</span>
+         </div><span class="px-3 py-1 rounded-full text-sm font-semibold" style="background: rgba(123, 31, 162, 0.15); color: #6A1B9A;">4.7/5</span>
+        </div>
+       </div>
+      </div><!-- Tool 4 -->
+      <div class="p-6 flex gap-4" style="background: #FFFFFF; border-radius: 15px; border-left: 4px solid #7B1FA2; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+       <div style="flex-shrink: 0;"><img src="Faridz/foto5.png" alt="Figma - Tool Kolaborasi UI/UX dan Prototype" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onerror="this.src=''; this.alt='Gambar tidak tersedia'; this.style.background='linear-gradient(135deg, #512DA8 0%, #7B1FA2 100%)';">
+       </div>
+       <div style="flex: 1;">
+        <h3 class="font-bold mb-2" style="font-size: 1.25rem; color: #6A1B9A;">Figma</h3>
+        <p class="mb-3" style="color: #4a5568; font-size: 0.95rem;">Kolaborasi UI/UX sederhana dan prototype interaktif</p>
+        <div class="flex items-center justify-between">
+         <div class="flex gap-1 star-rating"><span>★★★</span><span style="opacity: 0.8;">★</span><span style="opacity: 0.3;">★</span>
+         </div><span class="px-3 py-1 rounded-full text-sm font-semibold" style="background: rgba(123, 31, 162, 0.15); color: #6A1B9A;">3.8/5</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="w-full py-24 gradient-purple-bg particles" style="position: relative; padding-left: 10%; padding-right: 10%;">
+    <div class="stars" id="contact-stars"></div>
+    <div class="wave-separator"></div>
+    <div class="max-w-4xl mx-auto" style="position: relative; z-index: 3; padding-bottom: 100px;">
+     <h2 class="font-bold text-center mb-4" style="font-size: 2.5rem; color: #FFFFFF;">Hubungi Saya</h2>
+     <p class="text-center mb-12" style="font-size: 1.125rem; color: #CE93D8;">Siap diskusikan proyek Anda? Saya tersedia untuk kolaborasi remote atau tatap muka</p>
+     <div class="grid md:grid-cols-2 gap-8 mb-12"><!-- Contact Info -->
+      <div class="space-y-6">
+       <div class="flex items-center gap-4 p-4 rounded-xl" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: rgba(255, 255, 255, 0.25);">
+         <svg class="w-6 h-6" fill="none" stroke="#FFFFFF" stroke-width="2" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+         </svg>
+        </div>
+        <div>
+         <p class="font-semibold" style="color: #FFFFFF;">Email</p><a href="mailto:projectkhoirulfaridz@gmail.com" id="contact-email-link" class="hover:opacity-70" style="color: #E3F5FF; font-size: 0.9rem;">projectkhoirulfaridz@gmail.com</a>
+        </div>
+       </div>
+       <div class="flex items-center gap-4 p-4 rounded-xl" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: rgba(255, 255, 255, 0.25);">
+         <svg class="w-6 h-6" fill="none" stroke="#FFFFFF" stroke-width="2" viewbox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /> <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
+         </svg>
+        </div>
+        <div>
+         <p class="font-semibold" style="color: #FFFFFF;">Instagram</p>
+         <div class="flex gap-2" style="font-size: 0.9rem;"><a href="https://instagram.com/khoirulfaridz_" target="_blank" rel="noopener noreferrer" id="contact-instagram-link1" class="hover:opacity-70" style="color: #E3F5FF;">@khoirulfaridz_</a> <span style="color: #E3F5FF;">|</span> <a href="https://instagram.com/qwelstd" target="_blank" rel="noopener noreferrer" id="contact-instagram-link2" class="hover:opacity-70" style="color: #E3F5FF;">@qwelstd</a>
+         </div>
+        </div>
+       </div>
+       <div class="flex items-center gap-4 p-4 rounded-xl" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: rgba(255, 255, 255, 0.25);">
+         <svg class="w-6 h-6" fill="none" stroke="#FFFFFF" stroke-width="2" viewbox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" /> <circle cx="4" cy="4" r="2" />
+         </svg>
+        </div>
+        <div>
+         <p class="font-semibold" style="color: #FFFFFF;">LinkedIn</p><a href="https://linkedin.com/in/khoirulfaridz" target="_blank" rel="noopener noreferrer" id="contact-linkedin-link" class="hover:opacity-70" style="color: #E3F5FF; font-size: 0.9rem;">linkedin.com/in/khoirulfaridz</a>
+        </div>
+       </div>
+      </div><!-- Contact Form -->
+      <div class="p-8" style="background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+       <form id="contact-form" class="space-y-4">
+        <div><label for="name" class="block mb-2 font-semibold" style="color: #6A1B9A;">Nama</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 focus:outline-none transition-colors" style="border-radius: 10px; border-color: #AB47BC; background: #f8fafc; color: #000000;" placeholder="Nama Anda">
+        </div>
+        <div><label for="email" class="block mb-2 font-semibold" style="color: #6A1B9A;">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 focus:outline-none transition-colors" style="border-radius: 10px; border-color: #AB47BC; background: #f8fafc; color: #000000;" placeholder="email@example.com">
+        </div>
+        <div><label for="message" class="block mb-2 font-semibold" style="color: #6A1B9A;">Pesan / Brief Proyek</label> <textarea id="message" name="message" required rows="4" class="w-full px-4 py-3 border-2 focus:outline-none transition-colors" style="border-radius: 10px; border-color: #AB47BC; background: #f8fafc; color: #000000;" placeholder="Ceritakan tentang proyek Anda..."></textarea>
+        </div><button type="submit" id="submit-btn" class="w-full py-3 rounded-full font-semibold transition-all hover:opacity-90" style="background: #512DA8; color: white; box-shadow: 0 4px 15px rgba(81,45,168,0.3);">Kirim Pesan</button>
+        <div id="form-message" class="hidden p-3 rounded-lg text-center"></div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="w-full py-8" style="background: #FFFFFF; padding-left: 10%; padding-right: 10%;">
+    <div class="max-w-6xl mx-auto text-center">
+     <p style="color: #666666; font-weight: 500;">© 2026 Khoirul Faridz. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Generate twinkling stars
+    function createStars(containerId, count) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        container.appendChild(star);
+      }
+    }
+    
+    // Create stars for each purple section
+    createStars('hero-stars', 50);
+    createStars('services-stars', 60);
+    createStars('contact-stars', 40);
+    
+    const defaultConfig = {
+      hero_title: "Hai, Saya Khoirul Faridz",
+      hero_subtitle: "Desainer Grafis Spesialis Visual Branding & Media Digital",
+      hero_description: "Saya seorang desainer grafis yang berfokus pada visual branding dan media digital. Saya terbiasa mengolah ide menjadi tampilan visual yang komunikatif, relevan dengan target audiens, serta memiliki nilai estetika yang kuat. Bagi saya, desain bukan hanya soal tampilan, tetapi juga tentang pesan dan identitas.",
+      about_title: "Portofolio Saya",
+      contact_email: "projectkhoirulfaridz@gmail.com",
+      contact_instagram: "@khoirulfaridz_ | @qwelstd",
+      contact_linkedin: "linkedin.com/in/khoirulfaridz",
+      background_color: "#6A1B9A",
+      surface_color: "#FFFFFF",
+      text_color: "#FFFFFF",
+      primary_action_color: "#512DA8",
+      secondary_text_color: "#CE93D8",
+      font_family: "Inter",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const heroTitle = config.hero_title || defaultConfig.hero_title;
+      const heroSubtitle = config.hero_subtitle || defaultConfig.hero_subtitle;
+      const heroDescription = config.hero_description || defaultConfig.hero_description;
+      const aboutTitle = config.about_title || defaultConfig.about_title;
+      const contactEmail = config.contact_email || defaultConfig.contact_email;
+      const contactInstagram = config.contact_instagram || defaultConfig.contact_instagram;
+      const contactLinkedin = config.contact_linkedin || defaultConfig.contact_linkedin;
+      
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryTextColor = config.secondary_text_color || defaultConfig.secondary_text_color;
+      
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = '-apple-system, BlinkMacSystemFont, sans-serif';
+      
+      // Apply gradient backgrounds
+      document.querySelectorAll('.gradient-purple-bg').forEach(el => {
+        el.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${primaryColor} 50%, ${secondaryTextColor} 100%)`;
+      });
+      
+      document.querySelectorAll('section#about, section#tools').forEach(el => {
+        el.style.background = surfaceColor;
+      });
+      
+      // Update text content
+      document.getElementById('hero-title').textContent = heroTitle;
+      document.getElementById('hero-title').style.color = textColor;
+      document.getElementById('hero-title').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('hero-title').style.fontSize = `${baseFontSize * 3}px`;
+      
+      document.getElementById('hero-subtitle').textContent = heroSubtitle;
+      document.getElementById('hero-subtitle').style.color = secondaryTextColor;
+      document.getElementById('hero-subtitle').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('hero-subtitle').style.fontSize = `${baseFontSize * 1.5}px`;
+      
+      document.getElementById('hero-description').textContent = heroDescription;
+      document.getElementById('hero-description').style.color = textColor;
+      document.getElementById('hero-description').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('hero-description').style.fontSize = `${baseFontSize * 1.125}px`;
+      
+      document.getElementById('about-title').textContent = aboutTitle;
+      document.getElementById('about-title').style.color = primaryColor;
+      document.getElementById('about-title').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('about-title').style.fontSize = `${baseFontSize * 2.5}px`;
+      
+      // Update navigation
+      document.getElementById('nav-logo').style.color = primaryColor;
+      document.querySelectorAll('nav a').forEach(link => {
+        link.style.color = primaryColor;
+      });
+      
+      // Update buttons
+      document.querySelectorAll('a[href="#services"]').forEach(btn => {
+        btn.style.background = surfaceColor;
+        btn.style.color = primaryColor;
+      });
+      
+      document.querySelectorAll('button[type="submit"]').forEach(btn => {
+        btn.style.background = primaryColor;
+        btn.style.color = surfaceColor;
+      });
+      
+      // Update contact info
+      document.getElementById('contact-email-link').textContent = contactEmail;
+      document.getElementById('contact-email-link').href = `mailto:${contactEmail}`;
+      
+      const instagramHandles = contactInstagram.split('|').map(h => h.trim());
+      if (instagramHandles.length >= 2) {
+        document.getElementById('contact-instagram-link1').textContent = instagramHandles[0];
+        document.getElementById('contact-instagram-link1').href = `https://instagram.com/${instagramHandles[0].replace('@', '')}`;
+        document.getElementById('contact-instagram-link2').textContent = instagramHandles[1];
+        document.getElementById('contact-instagram-link2').href = `https://instagram.com/${instagramHandles[1].replace('@', '')}`;
+      }
+      
+      document.getElementById('contact-linkedin-link').textContent = contactLinkedin;
+      const linkedinUsername = contactLinkedin.includes('/') ? contactLinkedin.split('/').pop() : contactLinkedin;
+      document.getElementById('contact-linkedin-link').href = `https://linkedin.com/in/${linkedinUsername}`;
+      
+      // Apply font to all text
+      document.querySelectorAll('h1, h2, h3, p, a, button, label').forEach(el => {
+        el.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_text_color || defaultConfig.secondary_text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                config.secondary_text_color = value;
+                window.elementSdk.setConfig({ secondary_text_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            if (window.elementSdk) {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            if (window.elementSdk) {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_title", config.hero_title || defaultConfig.hero_title],
+        ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+        ["hero_description", config.hero_description || defaultConfig.hero_description],
+        ["about_title", config.about_title || defaultConfig.about_title],
+        ["contact_email", config.contact_email || defaultConfig.contact_email],
+        ["contact_instagram", config.contact_instagram || defaultConfig.contact_instagram],
+        ["contact_linkedin", config.contact_linkedin || defaultConfig.contact_linkedin]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      const subject = encodeURIComponent(`Pesan dari ${name} - Portfolio Contact`);
+      const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
+      
+      window.open(`mailto:projectkhoirulfaridz@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      
+      const formMessage = document.getElementById('form-message');
+      formMessage.classList.remove('hidden');
+      formMessage.style.background = 'rgba(102, 126, 234, 0.1)';
+      formMessage.style.color = '#667eea';
+      formMessage.textContent = 'Email client Anda akan terbuka. Silakan kirim email dari aplikasi email Anda.';
+      
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Carousel functionality
+    const carouselTrack = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressBar = document.getElementById('progress-bar');
+    
+    function updateProgressBar() {
+      const scrollWidth = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      const scrollLeft = carouselTrack.scrollLeft;
+      const scrollPercentage = (scrollLeft / scrollWidth) * 100;
+      progressBar.style.width = Math.min(100, Math.max(0, scrollPercentage)) + '%';
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      const scrollAmount = carouselTrack.clientWidth * 0.8;
+      carouselTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      const scrollAmount = carouselTrack.clientWidth * 0.8;
+      carouselTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+    
+    carouselTrack.addEventListener('scroll', updateProgressBar);
+    
+    // Update progress bar on window resize
+    window.addEventListener('resize', updateProgressBar);
+    
+    // Initial progress bar update
+    updateProgressBar();
+    
+    // Hover effects for buttons
+    prevBtn.addEventListener('mouseenter', () => {
+      prevBtn.style.background = 'rgba(123, 31, 162, 1)';
+      prevBtn.style.transform = 'translateY(-50%) scale(1.1)';
+    });
+    
+    prevBtn.addEventListener('mouseleave', () => {
+      prevBtn.style.background = 'rgba(106, 27, 154, 0.9)';
+      prevBtn.style.transform = 'translateY(-50%) scale(1)';
+    });
+    
+    nextBtn.addEventListener('mouseenter', () => {
+      nextBtn.style.background = 'rgba(123, 31, 162, 1)';
+      nextBtn.style.transform = 'translateY(-50%) scale(1.1)';
+    });
+    
+    nextBtn.addEventListener('mouseleave', () => {
+      nextBtn.style.background = 'rgba(106, 27, 154, 0.9)';
+      nextBtn.style.transform = 'translateY(-50%) scale(1)';
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b7a2066159a0af4',t:'MTc2NzM1NTU0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behaqi - Social Media Specialist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .font-display {
+      font-family: 'Sora', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary-action) 0%, var(--secondary-action) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .blob-1 {
+      width: 400px;
+      height: 400px;
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+    
+    .blob-2 {
+      width: 300px;
+      height: 300px;
+      bottom: 20%;
+      left: -50px;
+      animation-delay: -2s;
+    }
+    
+    .blob-3 {
+      width: 250px;
+      height: 250px;
+      top: 40%;
+      right: 10%;
+      animation-delay: -4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    .delay-5 { animation-delay: 0.5s; opacity: 0; }
+    .delay-6 { animation-delay: 0.6s; opacity: 0; }
+    
+    .skill-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .experience-card {
+      transition: all 0.3s ease;
+    }
+    
+    .experience-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--secondary-surface), transparent);
+    }
+    
+    :root {
+      --background-color: #0a0a0f;
+      --secondary-surface: #1a1a2e;
+      --text-color: #f0f0f5;
+      --primary-action: #6366f1;
+      --secondary-action: #ec4899;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background-color: var(--background-color);"><!-- Floating Blobs Background -->
+   <div class="blob blob-1" style="background-color: var(--primary-action);"></div>
+   <div class="blob blob-2" style="background-color: var(--secondary-action);"></div>
+   <div class="blob blob-3" style="background-color: var(--primary-action);"></div><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4" style="background: linear-gradient(to bottom, var(--background-color), transparent);">
+    <div class="max-w-6xl mx-auto flex justify-between items-center"><a href="#" class="font-display font-bold text-xl" style="color: var(--text-color);">B<span class="gradient-text">.</span></a>
+     <div class="hidden md:flex gap-8"><a href="#about" class="text-sm font-medium hover:opacity-100 transition-opacity" style="color: var(--text-color); opacity: 0.7;">Tentang</a> <a href="#skills" class="text-sm font-medium hover:opacity-100 transition-opacity" style="color: var(--text-color); opacity: 0.7;">Keahlian</a> <a href="#experience" class="text-sm font-medium hover:opacity-100 transition-opacity" style="color: var(--text-color); opacity: 0.7;">Pengalaman</a> <a href="#contact" class="text-sm font-medium hover:opacity-100 transition-opacity" style="color: var(--text-color); opacity: 0.7;">Kontak</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12">
+    <div class="max-w-4xl mx-auto text-center relative z-10"><!-- Profile Avatar -->
+     <div class="animate-scale-in delay-1 mb-8">
+      <div class="w-32 h-32 mx-auto rounded-full p-1" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+       <div class="w-full h-full rounded-full flex items-center justify-center" style="background-color: var(--secondary-surface);">
+        <svg class="w-16 h-16" style="color: var(--text-color);" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        </svg>
+       </div>
+      </div>
+     </div><!-- Name & Title -->
+     <p class="animate-fade-in-up delay-2 text-sm font-medium tracking-widest uppercase mb-4" style="color: var(--primary-action);">Social Media Specialist</p>
+     <h1 id="hero-name" class="animate-fade-in-up delay-3 font-display font-bold text-5xl md:text-7xl mb-6" style="color: var(--text-color);">Behaqi</h1>
+     <p id="hero-title" class="animate-fade-in-up delay-3 font-display text-xl md:text-2xl mb-6 gradient-text font-semibold">Social Media Specialist</p><!-- Description -->
+     <p id="hero-description" class="animate-fade-in-up delay-4 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8" style="color: var(--text-color); opacity: 0.8;">Mengelola akun Instagram, mendesain konten visual, mengedit video, hingga menyajikan cerita jurnalistik yang engaging semuanya untuk membangun kehadiran brand yang kuat di media sosial.</p><!-- Experience Badge -->
+     <div class="animate-fade-in-up delay-5 inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.3);"><span class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--primary-action);"></span> <span class="text-sm" style="color: var(--text-color); opacity: 0.9;">Admin @folkyogya &amp; @event.jogja</span>
+     </div><!-- CTA Buttons -->
+     <div class="animate-fade-in-up delay-6 flex flex-col sm:flex-row gap-4 justify-center"><a href="https://www.instagram.com/xbehaqi/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold" style="background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white;">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /> <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+       </svg> Hubungi Saya </a> <a href="#experience" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition-all hover:scale-105" style="background-color: var(--secondary-surface); color: var(--text-color); border: 1px solid rgba(99, 102, 241, 0.3);"> Lihat Portofolio 
+       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="relative py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+     <div class="section-divider mb-16"></div>
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+       <p class="text-sm font-medium tracking-widest uppercase mb-4" style="color: var(--primary-action);">Tentang Saya</p>
+       <h2 id="about-greeting" class="font-display font-bold text-3xl md:text-4xl mb-6" style="color: var(--text-color);">Halo, saya Behaqi 👋</h2>
+       <p id="about-description" class="text-lg leading-relaxed mb-6" style="color: var(--text-color); opacity: 0.8;">Seorang Social Media Specialist yang passionate di dunia digital marketing dan content creation. Saya menggabungkan keahlian Social Media Management, Desain Grafis, Video Editing, Jurnalistik, serta pengalaman di Social Media Agency dan Marketing untuk menciptakan strategi yang tidak hanya estetis, tapi juga efektif menjangkau audiens.</p>
+       <p class="text-lg font-medium" style="color: var(--secondary-action);">Fokus utama saya: membangun narasi brand yang autentik, engaging, dan hasil-oriented.</p>
+      </div>
+      <div class="relative">
+       <div class="absolute inset-0 rounded-3xl opacity-20" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));"></div>
+       <div class="relative rounded-3xl p-8" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <div class="space-y-6">
+         <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+           </svg>
+          </div>
+          <div>
+           <p class="text-sm" style="color: var(--text-color); opacity: 0.6;">Lokasi</p>
+           <p class="font-semibold" style="color: var(--text-color);">Yogyakarta, Indonesia</p>
+          </div>
+         </div>
+         <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
+           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /> <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+           </svg>
+          </div>
+          <div>
+           <p class="text-sm" style="color: var(--text-color); opacity: 0.6;">Instagram</p>
+           <p class="font-semibold" style="color: var(--text-color);">@xbehaqi</p>
+          </div>
+         </div>
+         <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+           </svg>
+          </div>
+          <div>
+           <p class="text-sm" style="color: var(--text-color); opacity: 0.6;">Status</p>
+           <p class="font-semibold" style="color: var(--primary-action);">Open for Collaboration</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="section-divider mb-16"></div>
+     <div class="text-center mb-16">
+      <p class="text-sm font-medium tracking-widest uppercase mb-4" style="color: var(--primary-action);">Keahlian Utama</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl" style="color: var(--text-color);">Skills &amp; Expertise</h2>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Skill 1 -->
+      <div class="skill-card rounded-2xl p-6" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+       </div>
+       <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Social Media Manager</h3>
+       <p class="text-sm" style="color: var(--text-color); opacity: 0.7;">Strategy, growth, dan daily management untuk berbagai platform sosial media.</p>
+      </div><!-- Skill 2 -->
+      <div class="skill-card rounded-2xl p-6" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--secondary-action), var(--primary-action));">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Desain Grafis</h3>
+       <p class="text-sm" style="color: var(--text-color); opacity: 0.7;">Visual konten menarik &amp; on-brand untuk feeds yang memukau.</p>
+      </div><!-- Skill 3 -->
+      <div class="skill-card rounded-2xl p-6" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Video Editor</h3>
+       <p class="text-sm" style="color: var(--text-color); opacity: 0.7;">Produksi video pendek hingga storytelling panjang yang engaging.</p>
+      </div><!-- Skill 4 -->
+      <div class="skill-card rounded-2xl p-6" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--secondary-action), var(--primary-action));">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+        </svg>
+       </div>
+       <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Jurnalistik</h3>
+       <p class="text-sm" style="color: var(--text-color); opacity: 0.7;">Penulisan konten berita/informasi yang credible dan engaging.</p>
+      </div><!-- Skill 5 -->
+      <div class="skill-card rounded-2xl p-6" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+       </div>
+       <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Social Media Agency</h3>
+       <p class="text-sm" style="color: var(--text-color); opacity: 0.7;">Pengelolaan multiple akun klien secara profesional.</p>
+      </div><!-- Skill 6 -->
+      <div class="skill-card rounded-2xl p-6" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--secondary-action), var(--primary-action));">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+       </div>
+       <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Marketing</h3>
+       <p class="text-sm" style="color: var(--text-color); opacity: 0.7;">Pendekatan strategis untuk meningkatkan awareness &amp; engagement.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Experience Section -->
+   <section id="experience" class="relative py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+     <div class="section-divider mb-16"></div>
+     <div class="text-center mb-16">
+      <p class="text-sm font-medium tracking-widest uppercase mb-4" style="color: var(--primary-action);">Pengalaman Kerja</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl" style="color: var(--text-color);">Experience</h2>
+     </div>
+     <div class="space-y-6"><!-- Experience Card 1 -->
+      <div class="experience-card rounded-2xl p-8" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+       <div class="flex flex-col md:flex-row md:items-center gap-6">
+        <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
+         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /> <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+         </svg>
+        </div>
+        <div class="flex-1">
+         <h3 class="font-display font-semibold text-xl mb-2" style="color: var(--text-color);">Admin Instagram</h3>
+         <div class="flex flex-wrap gap-2 mb-4"><a href="https://www.instagram.com/folkyogya/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-all hover:scale-105" style="background-color: var(--background-color); color: var(--primary-action);"> @folkyogya 
+           <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+           </svg></a> <a href="https://www.instagram.com/event.jogja/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-all hover:scale-105" style="background-color: var(--background-color); color: var(--secondary-action);"> @event.jogja 
+           <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+           </svg></a>
+         </div>
+         <p class="text-sm leading-relaxed" style="color: var(--text-color); opacity: 0.7;">Bertanggung jawab mengelola konten harian, berinteraksi dengan audiens, serta mendukung promosi event dan aktivitas komunitas di Yogyakarta.</p>
+        </div>
+       </div>
+      </div><!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+       <div class="text-center p-6 rounded-xl" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <p class="font-display font-bold text-2xl md:text-3xl gradient-text">2+</p>
+        <p class="text-xs mt-1" style="color: var(--text-color); opacity: 0.6;">Akun Dikelola</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <p class="font-display font-bold text-2xl md:text-3xl gradient-text">100+</p>
+        <p class="text-xs mt-1" style="color: var(--text-color); opacity: 0.6;">Konten Dibuat</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <p class="font-display font-bold text-2xl md:text-3xl gradient-text">6+</p>
+        <p class="text-xs mt-1" style="color: var(--text-color); opacity: 0.6;">Skills</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <p class="font-display font-bold text-2xl md:text-3xl gradient-text">YK</p>
+        <p class="text-xs mt-1" style="color: var(--text-color); opacity: 0.6;">Based In</p>
+       </div>
+      </div><!-- Instagram Profiles -->
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+       <div class="rounded-2xl p-4" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <h3 class="font-display font-semibold text-lg mb-4 text-center" style="color: var(--text-color);">@event.jogja</h3><iframe src="https://www.instagram.com/event.jogja/embed" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy" style="border-radius: 12px;"></iframe>
+       </div>
+       <div class="rounded-2xl p-4" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <h3 class="font-display font-semibold text-lg mb-4 text-center" style="color: var(--text-color);">@folkyogya</h3><iframe src="https://www.instagram.com/folkyogya/embed" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy" style="border-radius: 12px;"></iframe>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- CTA Section -->
+   <section id="contact" class="relative py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+     <div class="section-divider mb-16"></div>
+     <div class="text-center rounded-3xl p-12 relative overflow-hidden" style="background-color: var(--secondary-surface); border: 1px solid rgba(99, 102, 241, 0.2);"><!-- Background Gradient -->
+      <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at top right, var(--primary-action), transparent 50%), radial-gradient(circle at bottom left, var(--secondary-action), transparent 50%);"></div>
+      <div class="relative z-10">
+       <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+       </div>
+       <h2 id="cta-title" class="font-display font-bold text-3xl md:text-4xl mb-4" style="color: var(--text-color);">Mau Kolaborasi?</h2>
+       <p id="cta-description" class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--text-color); opacity: 0.8;">Saya siap membantu brand, agency, atau event Anda tumbuh di media sosial dengan pendekatan kreatif dan strategis.</p><a href="https://www.instagram.com/xbehaqi/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-semibold text-lg" style="background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white;">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /> <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg> DM Instagram </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_name: 'Behaqi',
+      hero_title: 'Social Media Specialist',
+      hero_description: 'Mengelola akun Instagram, mendesain konten visual, mengedit video, hingga menyajikan cerita jurnalistik yang engaging semuanya untuk membangun kehadiran brand yang kuat di media sosial.',
+      about_greeting: 'Halo, saya Behaqi 👋',
+      about_description: 'Seorang Social Media Specialist yang passionate di dunia digital marketing dan content creation. Saya menggabungkan keahlian Social Media Management, Desain Grafis, Video Editing, Jurnalistik, serta pengalaman di Social Media Agency dan Marketing untuk menciptakan strategi yang tidak hanya estetis, tapi juga efektif menjangkau audiens.',
+      cta_title: 'Mau Kolaborasi?',
+      cta_description: 'Saya siap membantu brand, agency, atau event Anda tumbuh di media sosial dengan pendekatan kreatif dan strategis.',
+      background_color: '#0a0a0f',
+      secondary_surface: '#1a1a2e',
+      text_color: '#f0f0f5',
+      primary_action: '#6366f1',
+      secondary_action: '#ec4899',
+      font_family: 'Sora',
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      // Update text content
+      document.getElementById('hero-name').textContent = config.hero_name || defaultConfig.hero_name;
+      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('about-greeting').textContent = config.about_greeting || defaultConfig.about_greeting;
+      document.getElementById('about-description').textContent = config.about_description || defaultConfig.about_description;
+      document.getElementById('cta-title').textContent = config.cta_title || defaultConfig.cta_title;
+      document.getElementById('cta-description').textContent = config.cta_description || defaultConfig.cta_description;
+
+      // Update colors
+      const root = document.documentElement;
+      root.style.setProperty('--background-color', config.background_color || defaultConfig.background_color);
+      root.style.setProperty('--secondary-surface', config.secondary_surface || defaultConfig.secondary_surface);
+      root.style.setProperty('--text-color', config.text_color || defaultConfig.text_color);
+      root.style.setProperty('--primary-action', config.primary_action || defaultConfig.primary_action);
+      root.style.setProperty('--secondary-action', config.secondary_action || defaultConfig.secondary_action);
+
+      // Update fonts
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const fontSize = config.font_size || defaultConfig.font_size;
+      
+      document.querySelectorAll('.font-display').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, Sora, sans-serif`;
+      });
+      
+      document.querySelectorAll('h1').forEach(el => {
+        el.style.fontSize = `${fontSize * 3}px`;
+      });
+      document.querySelectorAll('h2').forEach(el => {
+        el.style.fontSize = `${fontSize * 2}px`;
+      });
+      document.querySelectorAll('h3').forEach(el => {
+        el.style.fontSize = `${fontSize * 1.25}px`;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.secondary_surface || defaultConfig.secondary_surface,
+            set: (value) => {
+              config.secondary_surface = value;
+              window.elementSdk.setConfig({ secondary_surface: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_action || defaultConfig.primary_action,
+            set: (value) => {
+              config.primary_action = value;
+              window.elementSdk.setConfig({ primary_action: value });
+            }
+          },
+          {
+            get: () => config.secondary_action || defaultConfig.secondary_action,
+            set: (value) => {
+              config.secondary_action = value;
+              window.elementSdk.setConfig({ secondary_action: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['hero_name', config.hero_name || defaultConfig.hero_name],
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_description', config.hero_description || defaultConfig.hero_description],
+        ['about_greeting', config.about_greeting || defaultConfig.about_greeting],
+        ['about_description', config.about_description || defaultConfig.about_description],
+        ['cta_title', config.cta_title || defaultConfig.cta_title],
+        ['cta_description', config.cta_description || defaultConfig.cta_description]
+      ]);
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bf67deeb79e9e2e',t:'MTc2ODY1OTYxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

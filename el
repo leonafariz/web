@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL Portfolio - Risky Dimas Safariel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --color-bg: #0a0a0f;
+      --color-surface: #12121a;
+      --color-text: #e4e4e7;
+      --color-primary: #22d3ee;
+      --color-secondary: #6366f1;
+    }
+    
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-primary) var(--color-surface);
+    }
+    
+    .font-mono-custom {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .font-space {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    /* Glowing text effect */
+    .glow-text {
+      text-shadow: 0 0 20px rgba(34, 211, 238, 0.5), 0 0 40px rgba(34, 211, 238, 0.3);
+    }
+    
+    /* Grid background */
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Pixel animation for footer */
+    @keyframes pixel-move {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100vw); }
+    }
+    
+    .pixel {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--color-primary);
+      opacity: 0.6;
+    }
+    
+    .pixel:nth-child(1) { animation: pixel-move 8s linear infinite; top: 20%; animation-delay: 0s; }
+    .pixel:nth-child(2) { animation: pixel-move 12s linear infinite; top: 40%; animation-delay: 2s; }
+    .pixel:nth-child(3) { animation: pixel-move 10s linear infinite; top: 60%; animation-delay: 4s; }
+    .pixel:nth-child(4) { animation: pixel-move 14s linear infinite; top: 80%; animation-delay: 1s; }
+    .pixel:nth-child(5) { animation: pixel-move 9s linear infinite; top: 30%; animation-delay: 3s; }
+    .pixel:nth-child(6) { animation: pixel-move 11s linear infinite; top: 70%; animation-delay: 5s; }
+    .pixel:nth-child(7) { animation: pixel-move 13s linear infinite; top: 50%; animation-delay: 2.5s; }
+    .pixel:nth-child(8) { animation: pixel-move 7s linear infinite; top: 90%; animation-delay: 1.5s; }
+    
+    /* Card hover effect */
+    .project-card {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(34, 211, 238, 0.1);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(34, 211, 238, 0.4);
+      box-shadow: 0 10px 40px rgba(34, 211, 238, 0.15);
+    }
+    
+    /* Gradient border effect */
+    .gradient-border {
+      position: relative;
+    }
+    
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    
+    /* Typing cursor */
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
+    .cursor {
+      animation: blink 1s infinite;
+    }
+    
+    /* Scan line effect */
+    .scanlines::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+      );
+      pointer-events: none;
+    }
+    
+    /* Pulse ring */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border: 2px solid var(--color-primary);
+      border-radius: 50%;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-[#0a0a0f] text-[#e4e4e7] font-space overflow-auto">
+  <div id="app-wrapper" class="w-full min-h-full grid-bg"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-md border-b border-[#22d3ee]/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#22d3ee] to-[#6366f1] flex items-center justify-center"><span class="font-mono-custom font-bold text-[#0a0a0f] text-sm" id="nav-logo">EL</span>
+      </div><span class="font-mono-custom text-[#22d3ee] text-sm hidden sm:block">&lt;/portfolio&gt;</span>
+     </div>
+     <div class="flex items-center gap-6"><a href="#about" class="text-sm text-[#e4e4e7]/70 hover:text-[#22d3ee] transition-colors">About</a> <a href="#projects" class="text-sm text-[#e4e4e7]/70 hover:text-[#22d3ee] transition-colors">Projects</a> <a href="#contact" class="text-sm text-[#e4e4e7]/70 hover:text-[#22d3ee] transition-colors">Contact</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden"><!-- Decorative elements -->
+    <div class="absolute top-1/4 left-10 w-72 h-72 bg-[#22d3ee]/10 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#6366f1]/10 rounded-full blur-[120px]"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10"><!-- Avatar/Logo placeholder -->
+     <div class="mb-8 relative inline-block">
+      <div class="w-32 h-32 rounded-full bg-gradient-to-br from-[#22d3ee] to-[#6366f1] p-1 animate-float relative pulse-ring">
+       <div class="w-full h-full rounded-full bg-[#12121a] flex items-center justify-center">
+        <svg class="w-16 h-16 text-[#22d3ee]" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+       </div>
+      </div>
+     </div><!-- Name & Title -->
+     <div class="mb-6">
+      <h1 id="hero-name" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-[#e4e4e7] via-[#22d3ee] to-[#6366f1] bg-clip-text text-transparent">Risky Dimas Safariel</h1>
+      <div class="flex items-center justify-center gap-3"><span class="font-mono-custom text-[#22d3ee] text-2xl sm:text-3xl glow-text" id="hero-nickname">EL</span> <span class="cursor text-[#22d3ee] text-2xl">_</span>
+      </div>
+     </div><!-- Tagline -->
+     <p id="hero-tagline" class="text-lg sm:text-xl text-[#e4e4e7]/80 mb-6 max-w-2xl mx-auto leading-relaxed">Pengembang yang tertarik pada teknologi <span class="text-[#22d3ee] font-semibold">IoT (Internet of Things)</span>, <span class="text-[#6366f1] font-semibold">pemrograman</span>, dan <span class="text-[#22d3ee] font-semibold">pengembangan website</span>.</p>
+     <p class="text-[#e4e4e7]/60 mb-8 max-w-xl mx-auto">Saya senang membangun solusi yang menghubungkan perangkat keras, software, dan sistem digital untuk menyelesaikan masalah nyata.</p><!-- CTA Buttons -->
+     <div class="flex flex-wrap items-center justify-center gap-4"><a href="#projects" class="px-6 py-3 bg-gradient-to-r from-[#22d3ee] to-[#6366f1] text-[#0a0a0f] font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+       </svg> Lihat Project </a> <a href="#contact" class="px-6 py-3 border border-[#22d3ee]/30 text-[#22d3ee] rounded-lg hover:bg-[#22d3ee]/10 transition-colors flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       </svg> Hubungi Saya </a>
+     </div><!-- Scroll indicator -->
+     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-[#22d3ee]/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+     <div class="flex items-center gap-4 mb-12"><span class="font-mono-custom text-[#22d3ee] text-sm">01.</span>
+      <h2 class="text-3xl font-bold">Tentang Saya</h2>
+      <div class="flex-1 h-px bg-gradient-to-r from-[#22d3ee]/30 to-transparent"></div>
+     </div>
+     <div class="grid md:grid-cols-5 gap-8 items-center"><!-- Info Card -->
+      <div class="md:col-span-3 space-y-6">
+       <div class="gradient-border rounded-xl bg-[#12121a] p-6">
+        <p class="text-xl mb-4">Halo, saya <span class="text-[#22d3ee] font-semibold">EL</span>! 👋</p>
+        <div class="space-y-3 text-[#e4e4e7]/70">
+         <p><span class="text-[#e4e4e7]">Nama:</span> <span id="about-name">Risky Dimas Safariel</span></p>
+         <p><span class="text-[#e4e4e7]">Kelompok:</span> 4 KOTLIN</p>
+         <p><span class="text-[#e4e4e7]">Program Studi:</span> <span id="about-program">Teknik Informatika</span> Angkatan 2025</p>
+         <p><span class="text-[#e4e4e7]">Fakultas:</span> Ilmu Komputer dan Sistem Informasi</p>
+         <p><span class="text-[#e4e4e7]">Universitas:</span> <span id="about-university">Universitas Kebangsaan Republik Indonesia</span></p>
+        </div>
+       </div>
+       <p class="text-[#e4e4e7]/80 leading-relaxed">Saya fokus membangun hal-hal yang nyambung antara dunia fisik dan digital. Dari <span class="text-[#22d3ee]">IoT</span>, <span class="text-[#6366f1]">coding</span>, sampai <span class="text-[#22d3ee]">website</span> – semuanya saya suka eksplorasi dan kembangkan.</p>
+      </div><!-- Skills/Interests -->
+      <div class="md:col-span-2 space-y-4">
+       <div class="bg-[#12121a] rounded-xl p-4 border border-[#22d3ee]/10">
+        <h3 class="font-mono-custom text-[#22d3ee] text-sm mb-3">// interests</h3>
+        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-[#22d3ee]/10 text-[#22d3ee] text-sm rounded-full">IoT</span> <span class="px-3 py-1 bg-[#6366f1]/10 text-[#6366f1] text-sm rounded-full">Programming</span> <span class="px-3 py-1 bg-[#22d3ee]/10 text-[#22d3ee] text-sm rounded-full">Web Dev</span> <span class="px-3 py-1 bg-[#6366f1]/10 text-[#6366f1] text-sm rounded-full">Hardware</span> <span class="px-3 py-1 bg-[#22d3ee]/10 text-[#22d3ee] text-sm rounded-full">Digital Systems</span>
+        </div>
+       </div>
+       <div class="bg-[#12121a] rounded-xl p-4 border border-[#22d3ee]/10">
+        <h3 class="font-mono-custom text-[#22d3ee] text-sm mb-3">// tech_stack</h3>
+        <div class="grid grid-cols-4 gap-3">
+         <div class="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-[#22d3ee]/5 transition-colors">
+          <svg class="w-6 h-6 text-[#e4e4e7]/70" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg><span class="text-xs text-[#e4e4e7]/50">IoT</span>
+         </div>
+         <div class="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-[#22d3ee]/5 transition-colors">
+          <svg class="w-6 h-6 text-[#e4e4e7]/70" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+          </svg><span class="text-xs text-[#e4e4e7]/50">Code</span>
+         </div>
+         <div class="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-[#22d3ee]/5 transition-colors">
+          <svg class="w-6 h-6 text-[#e4e4e7]/70" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18M9 21V9" />
+          </svg><span class="text-xs text-[#e4e4e7]/50">Web</span>
+         </div>
+         <div class="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-[#22d3ee]/5 transition-colors">
+          <svg class="w-6 h-6 text-[#e4e4e7]/70" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" /> <path d="M9 9h6v6H9z" />
+          </svg><span class="text-xs text-[#e4e4e7]/50">HW</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="py-20 px-6 bg-[#12121a]/50">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex items-center gap-4 mb-6"><span class="font-mono-custom text-[#22d3ee] text-sm">02.</span>
+      <h2 class="text-3xl font-bold">Hasil Karya &amp; Project</h2>
+      <div class="flex-1 h-px bg-gradient-to-r from-[#22d3ee]/30 to-transparent"></div>
+     </div>
+     <p class="text-[#e4e4e7]/60 mb-12 max-w-2xl">Ini adalah tempat saya showcase berbagai project dan eksperimen yang sudah saya kerjakan. Project-project di bidang IoT, pemrograman, dan web development.</p><!-- Project Grid -->
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid"><!-- Project 1 -->
+      <div class="project-card rounded-xl bg-[#12121a] overflow-hidden group">
+       <div class="aspect-video bg-gradient-to-br from-[#22d3ee]/20 to-[#6366f1]/20 flex items-center justify-center relative scanlines">
+        <div class="text-center">
+         <svg class="w-12 h-12 text-[#22d3ee]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+         </svg><span class="text-xs text-[#e4e4e7]/30 font-mono-custom">/safariel/foto1.png</span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#12121a] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+       </div>
+       <div class="p-5">
+        <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 bg-[#22d3ee]/10 text-[#22d3ee] text-xs rounded font-mono-custom">IoT</span>
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-[#22d3ee] transition-colors">Project IoT #1</h3>
+        <p class="text-sm text-[#e4e4e7]/50">Deskripsi project akan ditambahkan segera.</p>
+       </div>
+      </div><!-- Project 2 -->
+      <div class="project-card rounded-xl bg-[#12121a] overflow-hidden group">
+       <div class="aspect-video bg-gradient-to-br from-[#6366f1]/20 to-[#22d3ee]/20 flex items-center justify-center relative scanlines">
+        <div class="text-center">
+         <svg class="w-12 h-12 text-[#6366f1]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+         </svg><span class="text-xs text-[#e4e4e7]/30 font-mono-custom">/safariel/foto2.png</span>
+        </div>
+       </div>
+       <div class="p-5">
+        <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 bg-[#6366f1]/10 text-[#6366f1] text-xs rounded font-mono-custom">Web</span>
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-[#22d3ee] transition-colors">Project Web #2</h3>
+        <p class="text-sm text-[#e4e4e7]/50">Deskripsi project akan ditambahkan segera.</p>
+       </div>
+      </div><!-- Project 3 -->
+      <div class="project-card rounded-xl bg-[#12121a] overflow-hidden group">
+       <div class="aspect-video bg-gradient-to-br from-[#22d3ee]/20 to-[#6366f1]/20 flex items-center justify-center relative scanlines">
+        <div class="text-center">
+         <svg class="w-12 h-12 text-[#22d3ee]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+         </svg><span class="text-xs text-[#e4e4e7]/30 font-mono-custom">/safariel/foto3.png</span>
+        </div>
+       </div>
+       <div class="p-5">
+        <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 bg-[#22d3ee]/10 text-[#22d3ee] text-xs rounded font-mono-custom">Programming</span>
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-[#22d3ee] transition-colors">Project Programming #3</h3>
+        <p class="text-sm text-[#e4e4e7]/50">Deskripsi project akan ditambahkan segera.</p>
+       </div>
+      </div><!-- Project 4 -->
+      <div class="project-card rounded-xl bg-[#12121a] overflow-hidden group">
+       <div class="aspect-video bg-gradient-to-br from-[#6366f1]/20 to-[#22d3ee]/20 flex items-center justify-center relative scanlines">
+        <div class="text-center">
+         <svg class="w-12 h-12 text-[#6366f1]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+         </svg><span class="text-xs text-[#e4e4e7]/30 font-mono-custom">/safariel/foto4.png</span>
+        </div>
+       </div>
+       <div class="p-5">
+        <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 bg-[#6366f1]/10 text-[#6366f1] text-xs rounded font-mono-custom">IoT</span>
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-[#22d3ee] transition-colors">Project IoT #4</h3>
+        <p class="text-sm text-[#e4e4e7]/50">Deskripsi project akan ditambahkan segera.</p>
+       </div>
+      </div><!-- Project 5 -->
+      <div class="project-card rounded-xl bg-[#12121a] overflow-hidden group">
+       <div class="aspect-video bg-gradient-to-br from-[#22d3ee]/20 to-[#6366f1]/20 flex items-center justify-center relative scanlines">
+        <div class="text-center">
+         <svg class="w-12 h-12 text-[#22d3ee]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+         </svg><span class="text-xs text-[#e4e4e7]/30 font-mono-custom">/safariel/foto5.png</span>
+        </div>
+       </div>
+       <div class="p-5">
+        <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 bg-[#22d3ee]/10 text-[#22d3ee] text-xs rounded font-mono-custom">Web</span>
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-[#22d3ee] transition-colors">Project Web #5</h3>
+        <p class="text-sm text-[#e4e4e7]/50">Deskripsi project akan ditambahkan segera.</p>
+       </div>
+      </div><!-- Project 6 - Coming Soon -->
+      <div class="project-card rounded-xl bg-[#12121a] overflow-hidden group border-dashed border-[#22d3ee]/20">
+       <div class="aspect-video bg-[#12121a] flex items-center justify-center">
+        <div class="text-center">
+         <svg class="w-12 h-12 text-[#22d3ee]/20 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+         </svg><span class="text-xs text-[#e4e4e7]/30">Coming Soon</span>
+        </div>
+       </div>
+       <div class="p-5">
+        <h3 class="font-semibold mb-2 text-[#e4e4e7]/30">More Projects...</h3>
+        <p class="text-sm text-[#e4e4e7]/20">Project lainnya akan ditambahkan.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+     <div class="flex items-center justify-center gap-4 mb-6">
+      <div class="flex-1 h-px bg-gradient-to-l from-[#22d3ee]/30 to-transparent"></div><span class="font-mono-custom text-[#22d3ee] text-sm">03.</span>
+      <h2 class="text-3xl font-bold">Hubungi Saya</h2>
+      <div class="flex-1 h-px bg-gradient-to-r from-[#22d3ee]/30 to-transparent"></div>
+     </div>
+     <p class="text-[#e4e4e7]/60 mb-8 max-w-lg mx-auto">Tertarik untuk berkolaborasi atau ingin tahu lebih lanjut? Jangan ragu untuk menghubungi saya!</p>
+     <div class="flex flex-wrap items-center justify-center gap-4"><a href="mailto:contact@example.com" class="px-6 py-3 bg-gradient-to-r from-[#22d3ee] to-[#6366f1] text-[#0a0a0f] font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       </svg> Kirim Email </a>
+     </div><!-- Social Links Placeholder -->
+     <div class="mt-12 flex items-center justify-center gap-6"><a href="#" class="w-10 h-10 rounded-lg bg-[#12121a] border border-[#22d3ee]/20 flex items-center justify-center text-[#e4e4e7]/50 hover:text-[#22d3ee] hover:border-[#22d3ee]/50 transition-colors">
+       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+       </svg></a> <a href="#" class="w-10 h-10 rounded-lg bg-[#12121a] border border-[#22d3ee]/20 flex items-center justify-center text-[#e4e4e7]/50 hover:text-[#22d3ee] hover:border-[#22d3ee]/50 transition-colors">
+       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+       </svg></a> <a href="#" class="w-10 h-10 rounded-lg bg-[#12121a] border border-[#22d3ee]/20 flex items-center justify-center text-[#e4e4e7]/50 hover:text-[#22d3ee] hover:border-[#22d3ee]/50 transition-colors">
+       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- Footer with Pixel Animation -->
+   <footer class="relative py-8 px-6 bg-[#0a0a0f] border-t border-[#22d3ee]/10 overflow-hidden"><!-- Pixel Animation -->
+    <div class="absolute inset-0 pointer-events-none">
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+     <div class="pixel"></div>
+    </div>
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+     <div class="flex items-center justify-center gap-2 mb-4">
+      <div class="w-6 h-6 rounded bg-gradient-to-br from-[#22d3ee] to-[#6366f1] flex items-center justify-center"><span class="font-mono-custom font-bold text-[#0a0a0f] text-xs">EL</span>
+      </div><span class="font-mono-custom text-[#22d3ee] text-sm">&lt;/&gt;</span>
+     </div>
+     <p id="footer-text" class="text-[#e4e4e7]/50 text-sm">© 2026 Risky Dimas Safariel (EL) - All Rights Reserved</p>
+     <p class="text-[#e4e4e7]/30 text-xs mt-2 font-mono-custom">Built with 💻 passion for technology</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      hero_name: 'Risky Dimas Safariel',
+      hero_nickname: 'EL',
+      hero_tagline: 'Pengembang yang tertarik pada teknologi IoT (Internet of Things), pemrograman, dan pengembangan website.',
+      about_program: 'Teknik Informatika',
+      about_university: 'Universitas Kebangsaan Republik Indonesia',
+      footer_text: '© 2026 Risky Dimas Safariel (EL) - All Rights Reserved',
+      background_color: '#0a0a0f',
+      surface_color: '#12121a',
+      text_color: '#e4e4e7',
+      primary_color: '#22d3ee',
+      secondary_color: '#6366f1'
+    };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        async onConfigChange(config) {
+          // Update hero section
+          const heroName = document.getElementById('hero-name');
+          if (heroName) heroName.textContent = config.hero_name || defaultConfig.hero_name;
+          
+          const heroNickname = document.getElementById('hero-nickname');
+          if (heroNickname) heroNickname.textContent = config.hero_nickname || defaultConfig.hero_nickname;
+          
+          const navLogo = document.getElementById('nav-logo');
+          if (navLogo) navLogo.textContent = config.hero_nickname || defaultConfig.hero_nickname;
+          
+          // Update about section
+          const aboutName = document.getElementById('about-name');
+          if (aboutName) aboutName.textContent = config.hero_name || defaultConfig.hero_name;
+          
+          const aboutProgram = document.getElementById('about-program');
+          if (aboutProgram) aboutProgram.textContent = config.about_program || defaultConfig.about_program;
+          
+          const aboutUniversity = document.getElementById('about-university');
+          if (aboutUniversity) aboutUniversity.textContent = config.about_university || defaultConfig.about_university;
+          
+          // Update footer
+          const footerText = document.getElementById('footer-text');
+          if (footerText) footerText.textContent = config.footer_text || defaultConfig.footer_text;
+          
+          // Update colors
+          const bgColor = config.background_color || defaultConfig.background_color;
+          const surfaceColor = config.surface_color || defaultConfig.surface_color;
+          const textColor = config.text_color || defaultConfig.text_color;
+          const primaryColor = config.primary_color || defaultConfig.primary_color;
+          const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+          
+          document.documentElement.style.setProperty('--color-bg', bgColor);
+          document.documentElement.style.setProperty('--color-surface', surfaceColor);
+          document.documentElement.style.setProperty('--color-text', textColor);
+          document.documentElement.style.setProperty('--color-primary', primaryColor);
+          document.documentElement.style.setProperty('--color-secondary', secondaryColor);
+          
+          document.body.style.backgroundColor = bgColor;
+          document.body.style.color = textColor;
+        },
+        mapToCapabilities(config) {
+          return {
+            recolorables: [
+              {
+                get: () => config.background_color || defaultConfig.background_color,
+                set: (value) => {
+                  config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                }
+              },
+              {
+                get: () => config.surface_color || defaultConfig.surface_color,
+                set: (value) => {
+                  config.surface_color = value;
+                  window.elementSdk.setConfig({ surface_color: value });
+                }
+              },
+              {
+                get: () => config.text_color || defaultConfig.text_color,
+                set: (value) => {
+                  config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                }
+              },
+              {
+                get: () => config.primary_color || defaultConfig.primary_color,
+                set: (value) => {
+                  config.primary_color = value;
+                  window.elementSdk.setConfig({ primary_color: value });
+                }
+              },
+              {
+                get: () => config.secondary_color || defaultConfig.secondary_color,
+                set: (value) => {
+                  config.secondary_color = value;
+                  window.elementSdk.setConfig({ secondary_color: value });
+                }
+              }
+            ],
+            borderables: [],
+            fontEditable: undefined,
+            fontSizeable: undefined
+          };
+        },
+        mapToEditPanelValues(config) {
+          return new Map([
+            ['hero_name', config.hero_name || defaultConfig.hero_name],
+            ['hero_nickname', config.hero_nickname || defaultConfig.hero_nickname],
+            ['hero_tagline', config.hero_tagline || defaultConfig.hero_tagline],
+            ['about_program', config.about_program || defaultConfig.about_program],
+            ['about_university', config.about_university || defaultConfig.about_university],
+            ['footer_text', config.footer_text || defaultConfig.footer_text]
+          ]);
+        }
+      });
+    }
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bf6dd1c0677fd14',t:'MTc2ODY2MzUxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -121,23 +121,23 @@
        </div>
        <form id="form-tagihan" class="space-y-5">
         <div class="grid md:grid-cols-2 gap-5">
-         <div id="nama-murid-wrapper" class="md:col-span-2"><label for="nama-murid" class="block text-sm font-semibold text-gray-700 mb-2">Nama Murid</label> <input type="text" id="nama-murid" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" placeholder="Contoh: Ahmad Subagyo"> <textarea id="nama-murid-bulk" required class="hidden w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" rows="3" placeholder="Masukkan nama murid, pisahkan dengan koma (,)
+         <div id="nama-murid-wrapper" class="md:col-span-2"><label for="nama-murid" class="block text-sm font-semibold text-gray-700 mb-2">Nama Murid</label> <input type="text" id="nama-murid" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" placeholder="Contoh: Ahmad Subagyo"> <textarea id="nama-murid-bulk" class="hidden w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" rows="3" placeholder="Masukkan nama murid, pisahkan dengan koma (,)
 Contoh: Ahmad Subagyo, Siti Nurhaliza, Budi Santoso"></textarea>
           <p id="bulk-hint" class="hidden text-xs text-gray-500 mt-2 flex items-center gap-1">
            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
            </svg> Pisahkan nama dengan koma (,) untuk input multiple murid sekaligus</p>
          </div>
-         <div><label for="kelas" class="block text-sm font-semibold text-gray-700 mb-2">Kelas</label> <select id="kelas" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-white"> <option value="">-- Pilih Kelas --</option> </select>
+         <div><label for="kelas" class="block text-sm font-semibold text-gray-700 mb-2">Kelas</label> <select id="kelas" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-white"> <option value="">-- Pilih Kelas --</option> </select>
          </div>
-         <div><label for="jenjang" class="block text-sm font-semibold text-gray-700 mb-2">Jenjang</label> <select id="jenjang" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-white"> <option value="">-- Pilih Jenjang --</option> </select>
+         <div><label for="jenjang" class="block text-sm font-semibold text-gray-700 mb-2">Jenjang</label> <select id="jenjang" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-white"> <option value="">-- Pilih Jenjang --</option> </select>
          </div>
-         <div><label for="tahun-ajaran" class="block text-sm font-semibold text-gray-700 mb-2">Tahun Ajaran</label> <input type="text" id="tahun-ajaran" required placeholder="Contoh: 2024/2025" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all">
+         <div><label for="tahun-ajaran" class="block text-sm font-semibold text-gray-700 mb-2">Tahun Ajaran</label> <input type="text" id="tahun-ajaran" placeholder="Contoh: 2024/2025" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all">
          </div>
-         <div><label for="jenis-tagihan" class="block text-sm font-semibold text-gray-700 mb-2">Jenis Tagihan</label> <select id="jenis-tagihan" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-white"> <option value="">-- Pilih Jenis --</option> </select>
+         <div><label for="jenis-tagihan" class="block text-sm font-semibold text-gray-700 mb-2">Jenis Tagihan</label> <select id="jenis-tagihan" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-white"> <option value="">-- Pilih Jenis --</option> </select>
          </div>
-         <div><label for="nama-tagihan" class="block text-sm font-semibold text-gray-700 mb-2">Nama Tagihan</label> <input type="text" id="nama-tagihan" required placeholder="Contoh: SPP Januari, Iuran Ujian" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all">
+         <div><label for="nama-tagihan" class="block text-sm font-semibold text-gray-700 mb-2">Nama Tagihan</label> <input type="text" id="nama-tagihan" placeholder="Contoh: SPP Januari, Iuran Ujian" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all">
          </div>
-         <div><label for="nominal" class="block text-sm font-semibold text-gray-700 mb-2">Nominal (Rp)</label> <input type="number" id="nominal" required min="0" placeholder="100000" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all">
+         <div><label for="nominal" class="block text-sm font-semibold text-gray-700 mb-2">Nominal (Rp)</label> <input type="number" id="nominal" min="0" placeholder="100000" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all">
          </div>
         </div>
         <div class="flex gap-4 pt-4"><button type="submit" id="btn-submit" class="flex-1 btn-primary text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg">
@@ -478,16 +478,16 @@ Contoh: Ahmad Subagyo, Siti Nurhaliza, Budi Santoso"></textarea>
       const bulkHint = document.getElementById('bulk-hint');
       
       if (isChecked) {
+        // Mode BULK
         normalInput.classList.add('hidden');
-        normalInput.required = false;
+        normalInput.value = '';
         bulkInput.classList.remove('hidden');
-        bulkInput.required = true;
         bulkHint.classList.remove('hidden');
       } else {
+        // Mode SINGLE
         normalInput.classList.remove('hidden');
-        normalInput.required = true;
         bulkInput.classList.add('hidden');
-        bulkInput.required = false;
+        bulkInput.value = '';
         bulkHint.classList.add('hidden');
       }
     }
@@ -885,11 +885,6 @@ Contoh: Ahmad Subagyo, Siti Nurhaliza, Budi Santoso"></textarea>
       kelasWrapper.style.display = settings.formFields.kelas ? 'block' : 'none';
       jenjangWrapper.style.display = settings.formFields.jenjang ? 'block' : 'none';
       tahunWrapper.style.display = settings.formFields.tahun_ajaran ? 'block' : 'none';
-      
-      // Update required
-      document.getElementById('kelas').required = settings.formFields.kelas;
-      document.getElementById('jenjang').required = settings.formFields.jenjang;
-      document.getElementById('tahun-ajaran').required = settings.formFields.tahun_ajaran;
     }
 
     // Form Submission dengan Auto Download dan Bulk Input Support
@@ -897,72 +892,122 @@ Contoh: Ahmad Subagyo, Siti Nurhaliza, Budi Santoso"></textarea>
       e.preventDefault();
 
       const isBulkMode = document.getElementById('bulk-input-toggle').checked;
+
+      // Validasi Nama Murid berdasarkan mode
+      let namaMuridList = [];
       
       if (isBulkMode) {
-        // Bulk Input Mode - Multiple Murid
-        const namaBulk = document.getElementById('nama-murid-bulk').value;
-        const namaList = namaBulk.split(',').map(n => n.trim()).filter(n => n.length > 0);
+        // MODE BULK
+        const namaBulk = document.getElementById('nama-murid-bulk').value.trim();
         
-        if (namaList.length === 0) {
+        if (!namaBulk) {
           showCustomAlert('Masukkan minimal satu nama murid');
           return;
         }
         
-        let successCount = 0;
-        const allFormData = [];
+        namaMuridList = namaBulk.split(',').map(n => n.trim()).filter(n => n.length > 0);
         
-        namaList.forEach(namaMurid => {
-          const formData = {
-            id: generateUniqueId(),
-            nama_murid: namaMurid,
-            id_murid: '', // Not used anymore, kept for backward compatibility
-            kelas: settings.formFields.kelas ? document.getElementById('kelas').value : '',
-            jenjang: settings.formFields.jenjang ? document.getElementById('jenjang').value : '',
-            tahun_ajaran: settings.formFields.tahun_ajaran ? document.getElementById('tahun-ajaran').value : '',
-            jenis_tagihan: document.getElementById('jenis-tagihan').value,
-            nama_tagihan: document.getElementById('nama-tagihan').value,
-            nominal: parseFloat(document.getElementById('nominal').value),
-            status: 'belum_bayar',
-            tanggal_bayar: '',
-            created_at: new Date().toISOString()
-          };
-          
-          allData.push(formData);
-          allFormData.push(formData);
-          successCount++;
-        });
-        
-        saveData();
-        
-        showCustomAlert(`${successCount} tagihan berhasil disimpan!`);
-        resetForm();
-        
+        if (namaMuridList.length === 0) {
+          showCustomAlert('Masukkan minimal satu nama murid yang valid');
+          return;
+        }
       } else {
-        // Normal Mode - Single Murid
+        // MODE SINGLE
+        const namaMurid = document.getElementById('nama-murid').value.trim();
+        
+        if (!namaMurid) {
+          showCustomAlert('Nama murid harus diisi');
+          return;
+        }
+        
+        namaMuridList = [namaMurid];
+      }
+
+      // Validasi field wajib lainnya
+      const jenisTagihan = document.getElementById('jenis-tagihan').value.trim();
+      const namaTagihan = document.getElementById('nama-tagihan').value.trim();
+      const nominalInput = document.getElementById('nominal').value.trim();
+
+      if (!jenisTagihan) {
+        showCustomAlert('Jenis Tagihan harus dipilih');
+        return;
+      }
+
+      if (!namaTagihan) {
+        showCustomAlert('Nama Tagihan harus diisi');
+        return;
+      }
+
+      if (!nominalInput || parseFloat(nominalInput) <= 0) {
+        showCustomAlert('Nominal harus diisi dengan angka lebih dari 0');
+        return;
+      }
+
+      const nominal = parseFloat(nominalInput);
+
+      // Validasi field opsional sesuai pengaturan
+      if (settings.formFields.kelas) {
+        const kelas = document.getElementById('kelas').value;
+        if (!kelas) {
+          showCustomAlert('Kelas harus dipilih');
+          return;
+        }
+      }
+
+      if (settings.formFields.jenjang) {
+        const jenjang = document.getElementById('jenjang').value;
+        if (!jenjang) {
+          showCustomAlert('Jenjang harus dipilih');
+          return;
+        }
+      }
+
+      if (settings.formFields.tahun_ajaran) {
+        const tahunAjaran = document.getElementById('tahun-ajaran').value.trim();
+        if (!tahunAjaran) {
+          showCustomAlert('Tahun Ajaran harus diisi');
+          return;
+        }
+      }
+
+      // Proses simpan data untuk setiap nama murid
+      const savedRecords = [];
+      
+      namaMuridList.forEach(namaMurid => {
         const formData = {
           id: generateUniqueId(),
-          nama_murid: document.getElementById('nama-murid').value,
-          id_murid: '', // Not used anymore, kept for backward compatibility
-          kelas: settings.formFields.kelas ? document.getElementById('kelas').value : '',
-          jenjang: settings.formFields.jenjang ? document.getElementById('jenjang').value : '',
-          tahun_ajaran: settings.formFields.tahun_ajaran ? document.getElementById('tahun-ajaran').value : '',
-          jenis_tagihan: document.getElementById('jenis-tagihan').value,
-          nama_tagihan: document.getElementById('nama-tagihan').value,
-          nominal: parseFloat(document.getElementById('nominal').value),
+          nama_murid: namaMurid,
+          id_murid: '',
+          kelas: settings.formFields.kelas ? (document.getElementById('kelas').value || '') : '',
+          jenjang: settings.formFields.jenjang ? (document.getElementById('jenjang').value || '') : '',
+          tahun_ajaran: settings.formFields.tahun_ajaran ? (document.getElementById('tahun-ajaran').value || '') : '',
+          jenis_tagihan: jenisTagihan,
+          nama_tagihan: namaTagihan,
+          nominal: nominal,
           status: 'belum_bayar',
           tanggal_bayar: '',
           created_at: new Date().toISOString()
         };
-
+        
         allData.push(formData);
-        saveData();
+        savedRecords.push(formData);
+      });
+      
+      saveData();
+
+      // Feedback dan download
+      if (isBulkMode) {
+        showCustomAlert(`${savedRecords.length} tagihan berhasil disimpan!`);
+      } else {
+        showCustomAlert('Data berhasil disimpan! Nota PDF akan otomatis terunduh.');
         
-        // Auto download nota setelah simpan
-        downloadNotaSingleTagihan(formData);
-        
-        showStatusMessage();
-        resetForm();
+        // Auto download nota untuk mode single
+        setTimeout(() => {
+          downloadNotaSingleTagihan(savedRecords[0]);
+        }, 500);
       }
+      
+      resetForm();
     });
 
     function resetForm() {
@@ -1941,5 +1986,5 @@ Contoh: Ahmad Subagyo, Siti Nurhaliza, Budi Santoso"></textarea>
 
     initApp();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c0640d1c3a6289f',t:'MTc2ODgyNDg4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c0abfa0d53f98b3',t:'MTc2ODg3MjAyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

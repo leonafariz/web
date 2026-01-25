@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROZZ STORE - Akun Game Free Fire Terpercaya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    
+    @keyframes particle {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+    }
+    
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2), 0 0 60px rgba(139, 92, 246, 0.1); }
+      50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(139, 92, 246, 0.3), 0 0 90px rgba(139, 92, 246, 0.2); }
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    
+    @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .glow-animation {
+      animation: glow 3s ease-in-out infinite;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #2d1b4e, #1e0a3e);
+      background-size: 400% 400%;
+      animation: gradient-shift 15s ease infinite;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: particle 3s ease-out infinite;
+    }
+    
+    .pulse-ring {
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    
+    .carousel-track {
+      animation: scroll 60s linear infinite;
+    }
+    
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+    
+    .card-gradient {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+      backdrop-filter: blur(10px);
+    }
+    
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .border-glow {
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.05);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+    }
+    
+    .stock-card {
+      transition: all 0.3s ease;
+    }
+    
+    .stock-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+    }
+    
+    .process-step {
+      transition: all 0.3s ease;
+    }
+    
+    .process-step:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full gradient-bg text-white font-rajdhani overflow-auto">
+  <div id="app" class="w-full h-full"><!-- Header -->
+   <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-emerald-500/20">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-400 flex items-center justify-center"><span class="text-black font-orbitron font-bold text-lg">R</span>
+      </div><span id="store-name" class="font-orbitron font-bold text-xl tracking-wider text-gradient">ROZZ STORE</span>
+     </div>
+     <nav class="hidden md:flex items-center gap-8"><a href="#stock" class="text-gray-300 hover:text-emerald-400 transition-colors font-medium">Stock</a> <a href="#proses" class="text-gray-300 hover:text-emerald-400 transition-colors font-medium">Proses</a> <a href="#testi" class="text-gray-300 hover:text-emerald-400 transition-colors font-medium">Testimoni</a> <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-2 rounded-full font-bold text-black"> Hubungi Kami </a>
+     </nav>
+    </div>
+   </header><!-- Hero Section -->
+   <section class="min-h-screen flex items-center pt-20 relative overflow-hidden"><!-- Background Effects -->
+    <div class="absolute inset-0 overflow-hidden">
+     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-purple-500/10 rounded-full"></div>
+     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-pink-500/5 rounded-full"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-12 items-center relative z-10"><!-- Left - Image with Effects -->
+     <div class="relative flex justify-center items-center order-2 lg:order-1"><!-- Animated Background -->
+      <div class="absolute w-80 h-80 md:w-96 md:h-96"><!-- Pulse Rings -->
+       <div class="absolute inset-0 rounded-full border-2 border-purple-400/30 pulse-ring"></div>
+       <div class="absolute inset-4 rounded-full border border-pink-400/20 pulse-ring" style="animation-delay: 0.5s;"></div>
+       <div class="absolute inset-8 rounded-full border border-purple-400/10 pulse-ring" style="animation-delay: 1s;"></div><!-- Background Glow -->
+       <div class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/20 via-pink-500/10 to-transparent blur-2xl"></div>
+      </div><!-- Particles -->
+      <div id="particles" class="absolute w-80 h-80 md:w-96 md:h-96"><!-- Particles will be generated by JS -->
+      </div><!-- Logo Image -->
+      <div class="relative w-64 h-64 md:w-80 md:h-80 float-animation">
+       <div class="absolute inset-0 rounded-2xl glow-animation"></div><img src="rozzxy/logo.png" alt="logo rozzxy" loading="lazy" class="w-full h-full object-contain relative z-10 drop-shadow-2xl" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #00ff88, #00d4ff)'; this.style.borderRadius='1rem'; this.alt='Logo Rozz Store';">
+      </div>
+     </div><!-- Right - Content -->
+     <div class="text-center lg:text-left order-1 lg:order-2">
+      <div class="inline-block px-4 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 mb-6"><span class="text-purple-400 text-sm font-medium">🔥 #1 Trusted Seller</span>
+      </div>
+      <h1 id="hero-title" class="font-orbitron text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight"><span class="text-gradient">JUAL AKUN</span><br><span class="text-white">FREE FIRE</span></h1>
+      <h2 id="hero-subtitle" class="font-orbitron text-xl md:text-2xl text-pink-400 mb-6 tracking-wide">SULTAN • RARE • MURAH</h2>
+      <p id="hero-description" class="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">Dapatkan akun Free Fire sultan dengan harga terjangkau! <span class="text-emerald-400 font-semibold">100% Aman</span>, <span class="text-cyan-400 font-semibold">Bergaransi</span>, dan <span class="text-yellow-400 font-semibold">Terpercaya</span> sejak 2020.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><a href="#form" id="cta-button" class="btn-primary px-8 py-4 rounded-full font-orbitron font-bold text-black text-lg inline-flex items-center justify-center gap-2"> <span>HUBUNGI KAMI</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg></a> <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full border-2 border-purple-500/50 text-purple-400 font-orbitron font-bold text-lg hover:bg-purple-500/10 transition-all inline-flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg><span>WHATSAPP</span> </a>
+      </div><!-- Trust Badges -->
+      <div class="flex items-center justify-center lg:justify-start gap-6 mt-10">
+       <div class="text-center">
+        <div class="text-2xl font-orbitron font-bold text-purple-400">
+         500+
+        </div>
+        <div class="text-xs text-gray-400">
+         Akun Terjual
+        </div>
+       </div>
+       <div class="w-px h-10 bg-gray-700"></div>
+       <div class="text-center">
+        <div class="text-2xl font-orbitron font-bold text-pink-400">
+         100%
+        </div>
+        <div class="text-xs text-gray-400">
+         Aman
+        </div>
+       </div>
+       <div class="w-px h-10 bg-gray-700"></div>
+       <div class="text-center">
+        <div class="text-2xl font-orbitron font-bold text-yellow-400">
+         4.9⭐
+        </div>
+        <div class="text-xs text-gray-400">
+         Rating
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Stock Section -->
+   <section id="stock" class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+     <div class="text-center mb-16">
+      <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4"><span class="text-gradient">STOCK AKUN</span> KAMI</h2>
+      <p class="text-gray-400 text-lg">Pilih akun sultan impianmu!</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Stock 1 -->
+      <div class="stock-card card-gradient rounded-2xl border-glow overflow-hidden">
+       <div class="relative">
+        <div class="aspect-square bg-gradient-to-br from-emerald-900/30 to-cyan-900/30 p-4"><img src="rozzxy/akun1.png" alt="akun 1" loading="lazy" class="w-full h-full object-contain rounded-lg" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #064e3b, #0e7490)'; this.alt='Akun 1';">
+        </div>
+        <div class="absolute top-4 right-4 bg-emerald-500 text-black px-3 py-1 rounded-full font-orbitron font-bold text-sm">
+         STOK KE 1
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="space-y-2 mb-4">
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-emerald-400 rounded-full"></span> LOG GUGLE
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-cyan-400 rounded-full"></span> BIND ON
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-green-400 rounded-full"></span> ALL AMAN ✓
+         </div>
+         <div class="flex items-center gap-2 text-yellow-400 font-semibold"><span class="w-2 h-2 bg-yellow-400 rounded-full"></span> SG VAULT 171
+         </div>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+         <div class="flex items-center justify-between mb-3"><span class="text-gray-400">Harga</span> <span class="font-orbitron text-2xl font-bold text-emerald-400">50K</span>
+         </div>
+         <div class="text-xs text-cyan-400 mb-4">
+          🛡️ BERGARANSI UANG KEMBALI
+         </div><a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20beli%20akun%20STOK%201%20harga%2050K" target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-3 rounded-xl font-bold text-black text-center block"> BELI SEKARANG </a>
+        </div>
+       </div>
+      </div><!-- Stock 2 -->
+      <div class="stock-card card-gradient rounded-2xl border-glow overflow-hidden">
+       <div class="relative">
+        <div class="aspect-square bg-gradient-to-br from-emerald-900/30 to-cyan-900/30 p-4"><img src="rozzxy/akun2.png" alt="akun 2" loading="lazy" class="w-full h-full object-contain rounded-lg" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #064e3b, #0e7490)'; this.alt='Akun 2';">
+        </div>
+        <div class="absolute top-4 right-4 bg-cyan-500 text-black px-3 py-1 rounded-full font-orbitron font-bold text-sm">
+         STOK KE 2
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="space-y-2 mb-4">
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-emerald-400 rounded-full"></span> LOG GUGLE
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-red-400 rounded-full"></span> BIND MATI
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-green-400 rounded-full"></span> ALL AMAN ✓
+         </div>
+         <div class="flex items-center gap-2 text-yellow-400 font-semibold"><span class="w-2 h-2 bg-yellow-400 rounded-full"></span> SG TEROMOЕТ • VAULT 128
+         </div>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+         <div class="flex items-center justify-between mb-3"><span class="text-gray-400">Harga</span> <span class="font-orbitron text-2xl font-bold text-cyan-400">69K</span>
+         </div>
+         <div class="text-xs text-cyan-400 mb-4">
+          🛡️ BERGARANSI BISA DI REFF
+         </div><a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20beli%20akun%20STOK%202%20harga%2069K" target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-3 rounded-xl font-bold text-black text-center block"> BELI SEKARANG </a>
+        </div>
+       </div>
+      </div><!-- Stock 3 -->
+      <div class="stock-card card-gradient rounded-2xl border-glow overflow-hidden">
+       <div class="relative">
+        <div class="aspect-square bg-gradient-to-br from-emerald-900/30 to-cyan-900/30 p-4"><img src="rozzxy/akun3.png" alt="akun 3" loading="lazy" class="w-full h-full object-contain rounded-lg" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #064e3b, #0e7490)'; this.alt='Akun 3';">
+        </div>
+        <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full font-orbitron font-bold text-sm">
+         STOK KE 3
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="space-y-2 mb-4">
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-blue-400 rounded-full"></span> LOG FB
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-cyan-400 rounded-full"></span> BIND ON
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-green-400 rounded-full"></span> ALL AMAN ✓
+         </div>
+         <div class="flex items-center gap-2 text-yellow-400 font-semibold"><span class="w-2 h-2 bg-yellow-400 rounded-full"></span> SG TROMPET • VAULT 69
+         </div>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+         <div class="flex items-center justify-between mb-3"><span class="text-gray-400">Harga</span> <span class="font-orbitron text-2xl font-bold text-emerald-400">60K</span>
+         </div>
+         <div class="text-xs text-cyan-400 mb-4">
+          🛡️ BERGARANSI UANG KEMBALI
+         </div><a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20beli%20akun%20STOK%203%20harga%2060K" target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-3 rounded-xl font-bold text-black text-center block"> BELI SEKARANG </a>
+        </div>
+       </div>
+      </div><!-- Stock 4 -->
+      <div class="stock-card card-gradient rounded-2xl border-glow overflow-hidden">
+       <div class="relative">
+        <div class="aspect-square bg-gradient-to-br from-emerald-900/30 to-cyan-900/30 p-4"><img src="rozzxy/akun4.png" alt="akun 4" loading="lazy" class="w-full h-full object-contain rounded-lg" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #064e3b, #0e7490)'; this.alt='Akun 4';">
+        </div>
+        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full font-orbitron font-bold text-sm">
+         STOK KE 4
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="space-y-2 mb-4">
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-emerald-400 rounded-full"></span> LOG GUGLE
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-orange-400 rounded-full"></span> BIND OTW SEPAKET
+         </div>
+         <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-green-400 rounded-full"></span> ALL AMAN ✓
+         </div>
+         <div class="flex items-center gap-2 text-yellow-400 font-semibold"><span class="w-2 h-2 bg-yellow-400 rounded-full"></span> SG AKUA • VAULT 127
+         </div>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+         <div class="flex items-center justify-between mb-3"><span class="text-gray-400">Harga</span> <span class="font-orbitron text-2xl font-bold text-purple-400">99K</span>
+         </div>
+         <div class="text-xs text-cyan-400 mb-4">
+          🛡️ BERGARANSI UANG KEMBALI
+         </div><a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20beli%20akun%20STOK%204%20harga%2099K" target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-3 rounded-xl font-bold text-black text-center block"> BELI SEKARANG </a>
+        </div>
+       </div>
+      </div><!-- Stock 5 - SULTAN -->
+      <div class="stock-card card-gradient rounded-2xl border-2 border-yellow-500/50 overflow-hidden lg:col-span-2">
+       <div class="lg:flex">
+        <div class="relative lg:w-1/2">
+         <div class="aspect-square bg-gradient-to-br from-yellow-900/30 to-orange-900/30 p-4"><img src="rozzxy/akun5.png" alt="akun 5" loading="lazy" class="w-full h-full object-contain rounded-lg" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #78350f, #9a3412)'; this.alt='Akun 5 Sultan';">
+         </div>
+         <div class="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-1 rounded-full font-orbitron font-bold text-sm">
+          👑 SULTAN STOCK
+         </div>
+        </div>
+        <div class="p-6 lg:w-1/2 lg:flex lg:flex-col lg:justify-center">
+         <div class="mb-4"><span class="text-yellow-400 font-orbitron font-bold text-lg">STOK KE 5</span> <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded ml-2">RECOMMENDED</span>
+         </div>
+         <div class="space-y-2 mb-4">
+          <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-emerald-400 rounded-full"></span> LOG GUGLE
+          </div>
+          <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-cyan-400 rounded-full"></span> BIND ON
+          </div>
+          <div class="flex items-center gap-2 text-gray-300"><span class="w-2 h-2 bg-green-400 rounded-full"></span> ALL AMAN ✓
+          </div>
+          <div class="flex items-center gap-2 text-yellow-400 font-semibold text-lg"><span class="w-2 h-2 bg-yellow-400 rounded-full"></span> SG REPER + GURUN • VAULT 290 🔥
+          </div>
+         </div>
+         <div class="border-t border-yellow-700/50 pt-4">
+          <div class="flex items-center justify-between mb-3"><span class="text-gray-400">Harga Sultan</span> <span class="font-orbitron text-3xl font-bold text-yellow-400">500K</span>
+          </div>
+          <div class="text-xs text-cyan-400 mb-4">
+           🛡️ BERGARANSI UANG KEMBALI
+          </div><a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20beli%20akun%20SULTAN%20STOK%205%20harga%20500K" target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-4 rounded-xl font-bold text-black text-center block text-lg"> 👑 BELI AKUN SULTAN </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Proses Pembelian -->
+   <section id="proses" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-16">
+      <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4">PROSES <span class="text-gradient">PEMBELIAN</span></h2>
+      <p class="text-gray-400 text-lg">Mudah, cepat, dan aman!</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Step 1 -->
+      <div class="process-step text-center">
+       <div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
+        <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+       </div>
+       <div class="font-orbitron text-4xl font-bold text-emerald-400 mb-2">
+        01
+       </div>
+       <h3 class="font-orbitron text-xl font-bold mb-2">ISI FORM</h3>
+       <p class="text-gray-400">Pilih akun yang diinginkan dan hubungi kami via WhatsApp</p>
+      </div><!-- Step 2 -->
+      <div class="process-step text-center">
+       <div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+        <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+       </div>
+       <div class="font-orbitron text-4xl font-bold text-cyan-400 mb-2">
+        02
+       </div>
+       <h3 class="font-orbitron text-xl font-bold mb-2">TRANSAKSI</h3>
+       <p class="text-gray-400">Lakukan pembayaran sesuai harga akun yang dipilih</p>
+      </div><!-- Step 3 -->
+      <div class="process-step text-center">
+       <div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+        <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+       </div>
+       <div class="font-orbitron text-4xl font-bold text-yellow-400 mb-2">
+        03
+       </div>
+       <h3 class="font-orbitron text-xl font-bold mb-2">AKUN DIKIRIM</h3>
+       <p class="text-gray-400">Akun langsung dikirim beserta data login lengkap</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Trust Section -->
+   <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-emerald-900/20 via-cyan-900/20 to-emerald-900/20"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+     <div class="text-center mb-16">
+      <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4">KENAPA PILIH <span class="text-gradient">ROZZ STORE</span>?</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Terpercaya -->
+      <div class="card-gradient rounded-2xl border-glow p-8 text-center">
+       <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-4xl">🛡️</span>
+       </div>
+       <h3 class="font-orbitron text-2xl font-bold text-emerald-400 mb-4">TERPERCAYA</h3>
+       <p class="text-gray-400">Sudah berjalan sejak 2020 dengan ratusan pelanggan puas. Reputasi terjaga!</p>
+      </div><!-- Amanah -->
+      <div class="card-gradient rounded-2xl border-glow p-8 text-center">
+       <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-cyan-500/20 flex items-center justify-center"><span class="text-4xl">🤝</span>
+       </div>
+       <h3 class="font-orbitron text-2xl font-bold text-cyan-400 mb-4">AMANAH</h3>
+       <p class="text-gray-400">Jujur dan transparan dalam setiap transaksi. No tipu-tipu, garansi pasti!</p>
+      </div><!-- Trusted -->
+      <div class="card-gradient rounded-2xl border-glow p-8 text-center">
+       <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-yellow-500/20 flex items-center justify-center"><span class="text-4xl">⭐</span>
+       </div>
+       <h3 class="font-orbitron text-2xl font-bold text-yellow-400 mb-4">TRUSTED</h3>
+       <p class="text-gray-400">Rating 4.9/5 dari ratusan review. Bukti nyata kepuasan pelanggan!</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Testimoni Section -->
+   <section id="testi" class="py-20 relative overflow-hidden">
+    <div class="max-w-full mx-auto">
+     <div class="text-center mb-16 px-4">
+      <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4"><span class="text-gradient">TESTIMONI</span> PELANGGAN</h2>
+      <p class="text-gray-400 text-lg">Bukti nyata kepuasan pelanggan kami!</p>
+     </div><!-- Carousel Container -->
+     <div class="relative overflow-hidden">
+      <div class="flex" id="carousel"><!-- Testimonials will be generated by JS -->
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Form Section -->
+   <section id="form" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4">
+     <div class="text-center mb-16">
+      <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4">HUBUNGI <span class="text-gradient">KAMI</span></h2>
+      <p class="text-gray-400 text-lg">Punya pertanyaan? Isi form di bawah ini dan kami akan segera merespons!</p>
+     </div>
+     <div class="card-gradient rounded-2xl border-glow p-8 md:p-12">
+      <form id="contact-form" class="space-y-6"><input type="hidden" name="access_key" value="eb9d58a0-ae4d-4aec-9ffd-8e77cb8b33d4"> <!-- Name -->
+       <div><label for="name" class="block text-sm font-medium text-purple-400 mb-2">Nama Lengkap</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-black/50 border border-purple-500/30 rounded-xl focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white transition-all" placeholder="Masukkan nama lengkap">
+       </div><!-- Email -->
+       <div><label for="email" class="block text-sm font-medium text-purple-400 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-black/50 border border-purple-500/30 rounded-xl focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white transition-all" placeholder="contoh@email.com">
+       </div><!-- Phone -->
+       <div><label for="phone" class="block text-sm font-medium text-purple-400 mb-2">Nomor WhatsApp</label> <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-black/50 border border-purple-500/30 rounded-xl focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white transition-all" placeholder="08xxxxxxxxxx">
+       </div><!-- Message -->
+       <div><label for="message" class="block text-sm font-medium text-purple-400 mb-2">Pesan / Pertanyaan</label> <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-black/50 border border-purple-500/30 rounded-xl focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white transition-all resize-none" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."></textarea>
+       </div><!-- Success/Error Messages -->
+       <div id="form-message" class="hidden p-4 rounded-xl text-center font-medium"></div><!-- Submit Button --> <button type="submit" id="submit-btn" class="btn-primary w-full py-4 rounded-xl font-orbitron font-bold text-black text-lg disabled:opacity-50 disabled:cursor-not-allowed"> KIRIM PESAN </button>
+      </form>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-400 flex items-center justify-center"><span class="text-black font-orbitron font-bold text-lg">R</span>
+       </div><span class="font-orbitron font-bold text-xl text-gradient">ROZZ STORE</span>
+      </div>
+      <div class="text-gray-400 text-center">
+       © 2024 Rozz Store. All rights reserved.
+      </div><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-2 rounded-full font-bold text-black inline-flex items-center gap-2">
+       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       </svg> Chat Sekarang </a>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      store_name: 'ROZZ STORE',
+      hero_title: 'JUAL AKUN FREE FIRE',
+      hero_subtitle: 'SULTAN • RARE • MURAH',
+      hero_description: 'Dapatkan akun Free Fire sultan dengan harga terjangkau! 100% Aman, Bergaransi, dan Terpercaya sejak 2020.',
+      cta_button: 'LIHAT STOCK',
+      background_color: '#0a0a0a',
+      surface_color: '#1a1a2e',
+      text_color: '#ffffff',
+      primary_color: '#00ff88',
+      secondary_color: '#00d4ff'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Generate particles around the hero image
+    function generateParticles() {
+      const container = document.getElementById('particles');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      const colors = ['#8b5cf6', '#ec4899', '#a855f7', '#d946ef'];
+      
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 100}px`);
+        particle.style.setProperty('--ty', `${(Math.random() - 0.5) * 100}px`);
+        particle.style.animationDelay = `${Math.random() * 3}s`;
+        particle.style.animationDuration = `${2 + Math.random() * 2}s`;
+        container.appendChild(particle);
+      }
+    }
+
+    // Generate testimonials carousel
+    function generateTestimonials() {
+      const carousel = document.getElementById('carousel');
+      if (!carousel) return;
+      
+      let html = '';
+      // Generate 3 sets for seamless loop
+      for (let set = 0; set < 3; set++) {
+        for (let i = 1; i <= 24; i++) {
+          html += `
+            <div class="flex-shrink-0 w-72 h-72 mx-2 rounded-xl overflow-hidden border border-purple-500/20 testi-item">
+              <img 
+                src="rozzxy/testi${i}.png" 
+                alt="testi ${i}" 
+                loading="lazy"
+                class="w-full h-full object-cover"
+                onerror="console.error('Image failed to load:', this.src); this.parentElement.style.background='linear-gradient(135deg, #581c87, #9333ea)'; this.style.display='none'; this.parentElement.innerHTML='<div class=\\'flex items-center justify-center h-full text-purple-400 font-orbitron\\'>Testi ${i}</div>';"
+              >
+            </div>
+          `;
+        }
+      }
+      
+      carousel.innerHTML = html;
+      
+      // Start carousel animation
+      let position = 0;
+      const speed = 1; // pixels per frame
+      const itemWidth = 304; // 288px + 16px margin
+      const totalWidth = itemWidth * 24;
+      
+      function animate() {
+        position -= speed;
+        
+        // Reset position for seamless loop
+        if (Math.abs(position) >= totalWidth) {
+          position = 0;
+        }
+        
+        carousel.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+    }
+
+    // Handle contact form submission
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = document.getElementById('submit-btn');
+      const formMessage = document.getElementById('form-message');
+      
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'MENGIRIM...';
+      
+      // Hide previous messages
+      formMessage.classList.add('hidden');
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          // Show success message
+          formMessage.classList.remove('hidden');
+          formMessage.classList.add('bg-purple-500/20', 'text-purple-400', 'border', 'border-purple-500/30');
+          formMessage.classList.remove('bg-red-500/20', 'text-red-400', 'border-red-500/30');
+          formMessage.textContent = '✓ Pesan berhasil dikirim! Kami akan segera menghubungi Anda.';
+          
+          // Reset form
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        // Show error message
+        formMessage.classList.remove('hidden');
+        formMessage.classList.add('bg-red-500/20', 'text-red-400', 'border', 'border-red-500/30');
+        formMessage.classList.remove('bg-purple-500/20', 'text-purple-400', 'border-purple-500/30');
+        formMessage.textContent = '✗ Terjadi kesalahan. Silakan coba lagi atau hubungi via WhatsApp.';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'KIRIM PESAN';
+      }
+    }
+
+    // Update UI based on config
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+      
+      const storeNameEl = document.getElementById('store-name');
+      const heroTitleEl = document.getElementById('hero-title');
+      const heroSubtitleEl = document.getElementById('hero-subtitle');
+      const heroDescriptionEl = document.getElementById('hero-description');
+      const ctaButtonEl = document.getElementById('cta-button');
+      
+      if (storeNameEl) storeNameEl.textContent = config.store_name || defaultConfig.store_name;
+      if (heroTitleEl) {
+        const title = config.hero_title || defaultConfig.hero_title;
+        const parts = title.split(' ');
+        if (parts.length > 2) {
+          heroTitleEl.innerHTML = `<span class="text-gradient">${parts.slice(0, 2).join(' ')}</span><br><span class="text-white">${parts.slice(2).join(' ')}</span>`;
+        } else {
+          heroTitleEl.innerHTML = `<span class="text-gradient">${title}</span>`;
+        }
+      }
+      if (heroSubtitleEl) heroSubtitleEl.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      if (heroDescriptionEl) {
+        const desc = config.hero_description || defaultConfig.hero_description;
+        heroDescriptionEl.innerHTML = desc.replace('100% Aman', '<span class="text-purple-400 font-semibold">100% Aman</span>')
+          .replace('Bergaransi', '<span class="text-pink-400 font-semibold">Bergaransi</span>')
+          .replace('Terpercaya', '<span class="text-yellow-400 font-semibold">Terpercaya</span>');
+      }
+      if (ctaButtonEl) {
+        const btnText = config.cta_button || defaultConfig.cta_button;
+        ctaButtonEl.innerHTML = `<span>${btnText}</span><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>`;
+      }
+    }
+
+    // Map config to capabilities
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              cfg.surface_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              cfg.primary_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              cfg.secondary_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ secondary_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || 'Rajdhani',
+          set: (value) => {
+            cfg.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || 16,
+          set: (value) => {
+            cfg.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    // Map config to edit panel values
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['store_name', cfg.store_name || defaultConfig.store_name],
+        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
+        ['hero_description', cfg.hero_description || defaultConfig.hero_description],
+        ['cta_button', cfg.cta_button || defaultConfig.cta_button]
+      ]);
+    }
+
+    // Initialize
+    async function init() {
+      generateParticles();
+      generateTestimonials();
+      
+      if (window.elementSdk) {
+        await window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues
+        });
+      } else {
+        onConfigChange(defaultConfig);
+      }
+    }
+
+    init();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c35fbcfe22ed3c6',t:'MTc2OTMyNTM3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rian Coffee - Where Every Cup Tells a Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    
+    .font-body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #D4A574 0%, #C9A86C 50%, #B8956E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .bg-noise {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+    }
+    
+    .menu-card {
+      background: linear-gradient(145deg, rgba(45, 35, 28, 0.8) 0%, rgba(30, 24, 20, 0.9) 100%);
+      border: 1px solid rgba(212, 165, 116, 0.15);
+      backdrop-filter: blur(10px);
+    }
+    
+    .menu-card:hover {
+      border-color: rgba(212, 165, 116, 0.4);
+      transform: translateY(-4px);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #D4A574 0%, #B8956E 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+    }
+    
+    .btn-secondary {
+      border: 1px solid rgba(212, 165, 116, 0.5);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(212, 165, 116, 0.1);
+      border-color: #D4A574;
+    }
+    
+    .feature-icon {
+      background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(184, 149, 110, 0.1) 100%);
+      border: 1px solid rgba(212, 165, 116, 0.2);
+    }
+    
+    .testimonial-card {
+      background: linear-gradient(145deg, rgba(40, 32, 26, 0.6) 0%, rgba(25, 20, 17, 0.8) 100%);
+      border: 1px solid rgba(212, 165, 116, 0.1);
+    }
+    
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(212, 165, 116, 0.3) 50%, transparent 100%);
+    }
+    
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-10px) translateX(-50%); }
+      60% { transform: translateY(-5px) translateX(-50%); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    
+    .nav-blur {
+      background: rgba(15, 12, 10, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    section {
+      scroll-margin-top: 80px;
+    }
+    
+    a[href^="#"] {
+      text-decoration: none;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body" style="background: linear-gradient(180deg, #0F0C0A 0%, #1A1512 50%, #0F0C0A 100%); color: #E8E4E0;">
+  <div class="fixed inset-0 bg-noise pointer-events-none"></div><!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+   <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between"><a href="#hero" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);">
+       <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M2 21V19H4V12C4 9.9 4.71667 8.08333 6.15 6.55C7.58333 5.01667 9.4 4.16667 11.6 4V3.5C11.6 3.08333 11.7458 2.72917 12.0375 2.4375C12.3292 2.14583 12.6833 2 13.1 2C13.5167 2 13.8708 2.14583 14.1625 2.4375C14.4542 2.72917 14.6 3.08333 14.6 3.5V4C16.8 4.16667 18.6167 5.01667 20.05 6.55C21.4833 8.08333 22.2 9.9 22.2 12V19H24.2V21H2ZM18 12H20V11.95C19.95 10.3667 19.3667 9.04167 18.25 7.975C17.1333 6.90833 15.7667 6.33333 14.15 6.25V8H12.15V6.25C10.5333 6.33333 9.16667 6.90833 8.05 7.975C6.93333 9.04167 6.35 10.3667 6.3 11.95V12H8V14H6V19H18V14H16V12H18Z" />
+       </svg>
+      </div><span id="nav-brand" class="font-display text-xl font-semibold text-gradient">Rian Coffee</span> </a>
+     <div class="hidden md:flex items-center gap-8"><a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-400 hover:text-white transition-colors">Tentang</a> <a href="#menu" onclick="event.preventDefault(); document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-400 hover:text-white transition-colors">Menu</a> <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-400 hover:text-white transition-colors">Testimoni</a> <a href="#location" onclick="event.preventDefault(); document.getElementById('location').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-400 hover:text-white transition-colors">Lokasi</a> <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-400 hover:text-white transition-colors">Kontak</a>
+     </div><button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg></button>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-800 pt-4">
+     <div class="flex flex-col gap-4"><a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu').classList.add('hidden');" class="text-gray-400 hover:text-white transition-colors">Tentang</a> <a href="#menu" onclick="event.preventDefault(); document.getElementById('menu').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu').classList.add('hidden');" class="text-gray-400 hover:text-white transition-colors">Menu</a> <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu').classList.add('hidden');" class="text-gray-400 hover:text-white transition-colors">Testimoni</a> <a href="#location" onclick="event.preventDefault(); document.getElementById('location').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu').classList.add('hidden');" class="text-gray-400 hover:text-white transition-colors">Lokasi</a> <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu').classList.add('hidden');" class="text-gray-400 hover:text-white transition-colors">Kontak</a>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <div class="h-full overflow-auto"><!-- Hero Section -->
+   <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="absolute inset-0 overflow-hidden">
+     <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20" style="background: radial-gradient(circle, #D4A574 0%, transparent 70%); filter: blur(60px);"></div>
+     <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15" style="background: radial-gradient(circle, #8B6914 0%, transparent 70%); filter: blur(80px);"></div>
+    </div>
+    <div class="relative z-10 text-center max-w-4xl mx-auto">
+     <div class="animate-fade-in-up opacity-0">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style="background: rgba(212, 165, 116, 0.1); border: 1px solid rgba(212, 165, 116, 0.2);"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> <span class="text-sm text-gray-400">Buka Sekarang • 07:00 - 22:00</span>
+      </div>
+     </div>
+     <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up opacity-0 delay-100"><span class="text-gradient">Rian Coffee</span></h1>
+     <p id="hero-tagline" class="font-display text-xl md:text-2xl italic mb-6 animate-fade-in-up opacity-0 delay-200" style="color: #D4A574;">Where every cup tells a story.</p>
+     <p id="hero-description" class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-4 animate-fade-in-up opacity-0 delay-300 leading-relaxed">Nikmati momen tenang di tengah hiruk-pikuk hari.</p>
+     <p class="text-base text-gray-500 max-w-xl mx-auto mb-10 animate-fade-in-up opacity-0 delay-300">Kopi spesialti pilihan, diseduh dengan hati, untuk Anda yang menghargai yang terbaik.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-400"><a href="#location" class="btn-primary px-8 py-4 rounded-full font-medium text-gray-900 inline-flex items-center justify-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+       </svg> Temukan Lokasi Terdekat </a> <a href="#menu" class="btn-secondary px-8 py-4 rounded-full font-medium inline-flex items-center justify-center gap-2" style="color: #D4A574;">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+       </svg> Lihat Menu </a>
+     </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 scroll-indicator"><a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({ behavior: 'smooth' });" class="text-gray-500 hover:text-gray-300 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg></a>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div><span class="text-sm uppercase tracking-widest mb-4 block" style="color: #D4A574;">Tentang Kami</span>
+       <h2 id="about-title" class="font-display text-3xl md:text-4xl font-semibold mb-6 leading-tight">Di Rian Coffee, kami percaya kopi lebih dari sekadar minuman</h2>
+       <p class="text-gray-400 leading-relaxed mb-6">— ia adalah ritual, percakapan, dan jeda yang berharga. Kami meracik setiap cangkir dengan biji kopi terbaik dari petani lokal dan internasional, diproses dengan teliti oleh barista yang passionate.</p>
+       <p class="text-gray-400 leading-relaxed mb-8">Tempat kami dirancang untuk menjadi ruang nyaman: minimalis, hangat, dan elegan — sempurna untuk bekerja, bertemu, atau sekadar menikmati keheningan bersama secangkir kopi.</p>
+       <div class="inline-flex items-center gap-3 px-6 py-3 rounded-lg" style="background: rgba(212, 165, 116, 0.1); border: 1px solid rgba(212, 165, 116, 0.2);"><span class="font-display text-lg italic" style="color: #D4A574;">Bukan sekadar kedai, tapi pengalaman.</span>
+       </div>
+      </div>
+      <div class="relative">
+       <div class="aspect-square rounded-2xl overflow-hidden" style="background: linear-gradient(145deg, #2D231C 0%, #1E1814 100%); border: 1px solid rgba(212, 165, 116, 0.15);"><img id="about-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%232D231C' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4A574' font-size='24' font-family='Arial'%3EClick to upload image%3C/text%3E%3C/svg%3E" alt="About image" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(145deg, #2D231C 0%, #1E1814 100%)'; this.alt='Image unavailable';" class="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity" onclick="document.getElementById('about-image-input').click();"> <input type="file" id="about-image-input" accept="image/*" style="display: none;" onchange="handleAboutImageUpload(event)">
+       </div>
+       <div class="absolute -bottom-6 -right-6 w-48 h-48 rounded-full opacity-30" style="background: radial-gradient(circle, #D4A574 0%, transparent 70%); filter: blur(40px);"></div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="divider max-w-4xl mx-auto"></div><!-- Menu Section -->
+   <section id="menu" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm uppercase tracking-widest mb-4 block" style="color: #D4A574;">Menu</span>
+      <h2 id="menu-headline" class="font-display text-3xl md:text-5xl font-semibold mb-4">Our Signature Brews</h2>
+      <p class="text-gray-400 max-w-xl mx-auto">Dari espresso klasik hingga kreasi spesial, semua dibuat untuk memanjakan indera Anda.</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-6"><!-- Menu Item 1 -->
+      <div class="menu-card rounded-2xl p-6 transition-all duration-300">
+       <div class="flex items-start gap-4">
+        <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(139, 105, 20, 0.1) 100%);"><span class="text-3xl">����</span>
+        </div>
+        <div>
+         <h3 class="font-display text-xl font-semibold mb-2" style="color: #D4A574;">Rian Signature</h3>
+         <p class="text-gray-400 text-sm leading-relaxed">Blend eksklusif kami: bold, smooth, dengan hint cokelat dan karamel yang memanjakan.</p>
+        </div>
+       </div>
+      </div><!-- Menu Item 2 -->
+      <div class="menu-card rounded-2xl p-6 transition-all duration-300">
+       <div class="flex items-start gap-4">
+        <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(139, 105, 20, 0.1) 100%);"><span class="text-3xl">🫖</span>
+        </div>
+        <div>
+         <h3 class="font-display text-xl font-semibold mb-2" style="color: #D4A574;">Single Origin Pour Over</h3>
+         <p class="text-gray-400 text-sm leading-relaxed">Kopi single estate pilihan, diseduh manual untuk rasa paling murni dan autentik.</p>
+        </div>
+       </div>
+      </div><!-- Menu Item 3 -->
+      <div class="menu-card rounded-2xl p-6 transition-all duration-300">
+       <div class="flex items-start gap-4">
+        <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(139, 105, 20, 0.1) 100%);"><span class="text-3xl">🧊</span>
+        </div>
+        <div>
+         <h3 class="font-display text-xl font-semibold mb-2" style="color: #D4A574;">Cold Brew on Tap</h3>
+         <p class="text-gray-400 text-sm leading-relaxed">Dingin, segar, dan rendah asam — cocok untuk menemani siang panjang Anda.</p>
+        </div>
+       </div>
+      </div><!-- Menu Item 4 -->
+      <div class="menu-card rounded-2xl p-6 transition-all duration-300">
+       <div class="flex items-start gap-4">
+        <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(139, 105, 20, 0.1) 100%);"><span class="text-3xl">✨</span>
+        </div>
+        <div>
+         <h3 class="font-display text-xl font-semibold mb-2" style="color: #D4A574;">Seasonal Special</h3>
+         <p class="text-gray-400 text-sm leading-relaxed">Kreasi terbatas yang mengikuti musim dan inspirasi kreatif barista kami.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="divider max-w-4xl mx-auto"></div><!-- Why Us Section -->
+   <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm uppercase tracking-widest mb-4 block" style="color: #D4A574;">Keunggulan</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold">Mengapa Rian Coffee?</h2>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="text-center">
+       <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-2xl">🫘</span>
+       </div>
+       <h3 class="font-medium mb-2">Fresh Roast Berkualitas</h3>
+       <p class="text-gray-500 text-sm">Biji kopi dipanggang fresh untuk kualitas terbaik</p>
+      </div>
+      <div class="text-center">
+       <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-2xl">👨‍🍳</span>
+       </div>
+       <h3 class="font-medium mb-2">Barista Berpengalaman</h3>
+       <p class="text-gray-500 text-sm">Tim passionate yang friendly dan profesional</p>
+      </div>
+      <div class="text-center">
+       <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-2xl">📶</span>
+       </div>
+       <h3 class="font-medium mb-2">WiFi Cepat &amp; Nyaman</h3>
+       <p class="text-gray-500 text-sm">Ruang cozy dengan spot Instagramable</p>
+      </div>
+      <div class="text-center">
+       <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-2xl">🍵</span>
+       </div>
+       <h3 class="font-medium mb-2">Non-Coffee Options</h3>
+       <p class="text-gray-500 text-sm">Matcha, chocolate, dan teh premium</p>
+      </div>
+      <div class="text-center">
+       <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-2xl">🚗</span>
+       </div>
+       <h3 class="font-medium mb-2">Takeaway &amp; Delivery</h3>
+       <p class="text-gray-500 text-sm">Layanan praktis dan ramah</p>
+      </div>
+      <div class="text-center">
+       <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-2xl">🐕</span>
+       </div>
+       <h3 class="font-medium mb-2">Pet-Friendly</h3>
+       <p class="text-gray-500 text-sm">Area outdoor untuk teman berbulu</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="divider max-w-4xl mx-auto"></div><!-- Testimonials -->
+   <section id="testimonials" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm uppercase tracking-widest mb-4 block" style="color: #D4A574;">Testimoni</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold">What People Say</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="testimonial-card rounded-2xl p-8">
+       <div class="flex gap-1 mb-4"><span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span>
+       </div>
+       <p class="text-gray-300 italic mb-6 leading-relaxed">"Rian Coffee jadi spot favoritku buat kerja remote. Kopinya enak, tempatnya cozy banget."</p>
+       <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium" style="background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%); color: #0F0C0A;">
+         A
+        </div>
+        <div>
+         <p class="font-medium text-sm">Andi</p>
+         <p class="text-gray-500 text-xs">Freelancer</p>
+        </div>
+       </div>
+      </div>
+      <div class="testimonial-card rounded-2xl p-8">
+       <div class="flex gap-1 mb-4"><span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span> <span style="color: #D4A574;">★</span>
+       </div>
+       <p class="text-gray-300 italic mb-6 leading-relaxed">"Kopi single origin-nya luar biasa. Rasanya beda dari yang biasa!"</p>
+       <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium" style="background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%); color: #0F0C0A;">
+         S
+        </div>
+        <div>
+         <p class="font-medium text-sm">Sarah</p>
+         <p class="text-gray-500 text-xs">Coffee Enthusiast</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="divider max-w-4xl mx-auto"></div><!-- Location Section -->
+   <section id="location" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div><span class="text-sm uppercase tracking-widest mb-4 block" style="color: #D4A574;">Lokasi</span>
+       <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6">Kunjungi Kami</h2>
+       <div class="space-y-6">
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(212, 165, 116, 0.1);">
+          <svg class="w-5 h-5" style="color: #D4A574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-medium mb-1">Alamat</h3>
+          <p class="text-gray-400 text-sm">Jl. Kopi Premium No. 88<br>
+           Jakarta Selatan, Indonesia 12345</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(212, 165, 116, 0.1);">
+          <svg class="w-5 h-5" style="color: #D4A574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-medium mb-1">Jam Buka</h3>
+          <p class="text-gray-400 text-sm">Senin – Minggu<br>
+           07:00 – 22:00 WIB</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(212, 165, 116, 0.1);">
+          <svg class="w-5 h-5" style="color: #D4A574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-medium mb-1">Fasilitas</h3>
+          <p class="text-gray-400 text-sm">Parkir tersedia • WiFi gratis • Pet-friendly (outdoor)</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden" style="background: linear-gradient(145deg, #2D231C 0%, #1E1814 100%); border: 1px solid rgba(212, 165, 116, 0.15);">
+       <div class="aspect-video flex items-center justify-center relative group"><img id="maps-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%232D231C' width='400' height='300'/%3E%3Crect fill='%231E1814' width='400' height='300' opacity='0.5'/%3E%3C/svg%3E" alt="Maps image" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(145deg, #2D231C 0%, #1E1814 100%)'; this.alt='Image unavailable';" class="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity" onclick="document.getElementById('maps-image-input').click();"> <input type="file" id="maps-image-input" accept="image/*" style="display: none;" onchange="handleMapsImageUpload(event)">
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="divider max-w-4xl mx-auto"></div><!-- Contact Section -->
+   <section id="contact" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+     <div class="text-center mb-12"><span class="text-sm uppercase tracking-widest mb-4 block" style="color: #D4A574;">Kontak</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">Connect With Us</h2>
+      <p class="text-gray-400">Ingin pesan catering, kolaborasi, atau sekadar ngobrol soal kopi?</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8 mb-12"><a href="mailto:hello@riancoffee.com" class="flex items-center gap-4 p-6 rounded-2xl transition-all duration-300" style="background: rgba(212, 165, 116, 0.05); border: 1px solid rgba(212, 165, 116, 0.1);">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(212, 165, 116, 0.1);">
+        <svg class="w-5 h-5" style="color: #D4A574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <div>
+        <p class="text-gray-500 text-sm">Email</p>
+        <p id="contact-email" class="font-medium" style="color: #D4A574;">hello@riancoffee.com</p>
+       </div></a> <a href="https://instagram.com/riancoffee" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-6 rounded-2xl transition-all duration-300" style="background: rgba(212, 165, 116, 0.05); border: 1px solid rgba(212, 165, 116, 0.1);">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(212, 165, 116, 0.1);">
+        <svg class="w-5 h-5" style="color: #D4A574;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
+       </div>
+       <div>
+        <p class="text-gray-500 text-sm">Instagram</p>
+        <p id="contact-instagram" class="font-medium" style="color: #D4A574;">@riancoffee</p>
+       </div></a>
+     </div><!-- Contact Form -->
+     <div class="rounded-2xl p-8" style="background: linear-gradient(145deg, rgba(45, 35, 28, 0.5) 0%, rgba(30, 24, 20, 0.7) 100%); border: 1px solid rgba(212, 165, 116, 0.1);">
+      <h3 class="font-display text-xl font-semibold mb-6 text-center">Kirim Pesan</h3>
+      <form id="contact-form" class="space-y-4">
+       <div class="grid md:grid-cols-2 gap-4">
+        <div><label for="name" class="block text-sm text-gray-400 mb-2">Nama</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 focus:border-amber-600 focus:outline-none transition-colors text-white placeholder-gray-500" placeholder="Nama Anda">
+        </div>
+        <div><label for="email" class="block text-sm text-gray-400 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 focus:border-amber-600 focus:outline-none transition-colors text-white placeholder-gray-500" placeholder="email@contoh.com">
+        </div>
+       </div>
+       <div><label for="subject" class="block text-sm text-gray-400 mb-2">Subjek</label> <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 focus:border-amber-600 focus:outline-none transition-colors text-white placeholder-gray-500" placeholder="Apa yang bisa kami bantu?">
+       </div>
+       <div><label for="message" class="block text-sm text-gray-400 mb-2">Pesan</label> <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 focus:border-amber-600 focus:outline-none transition-colors text-white placeholder-gray-500 resize-none" placeholder="Tulis pesan Anda..."></textarea>
+       </div><button type="submit" class="btn-primary w-full py-4 rounded-xl font-medium text-gray-900"> Kirim Pesan </button>
+      </form>
+      <div id="form-success" class="hidden text-center py-8">
+       <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: rgba(34, 197, 94, 0.2);">
+        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+       </div>
+       <h3 class="font-display text-xl font-semibold mb-2">Pesan Terkirim!</h3>
+       <p class="text-gray-400">Terima kasih telah menghubungi kami. Kami akan segera merespons.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-6 border-t" style="border-color: rgba(212, 165, 116, 0.1);">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);">
+        <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M2 21V19H4V12C4 9.9 4.71667 8.08333 6.15 6.55C7.58333 5.01667 9.4 4.16667 11.6 4V3.5C11.6 3.08333 11.7458 2.72917 12.0375 2.4375C12.3292 2.14583 12.6833 2 13.1 2C13.5167 2 13.8708 2.14583 14.1625 2.4375C14.4542 2.72917 14.6 3.08333 14.6 3.5V4C16.8 4.16667 18.6167 5.01667 20.05 6.55C21.4833 8.08333 22.2 9.9 22.2 12V19H24.2V21H2ZM18 12H20V11.95C19.95 10.3667 19.3667 9.04167 18.25 7.975C17.1333 6.90833 15.7667 6.33333 14.15 6.25V8H12.15V6.25C10.5333 6.33333 9.16667 6.90833 8.05 7.975C6.93333 9.04167 6.35 10.3667 6.3 11.95V12H8V14H6V19H18V14H16V12H18Z" />
+        </svg>
+       </div>
+       <div><span class="font-display text-lg font-semibold text-gradient">Rian Coffee</span>
+        <p class="text-xs text-gray-500 italic">One sip closer to perfection.</p>
+       </div>
+      </div>
+      <div class="flex items-center gap-6"><a href="#hero" onclick="event.preventDefault(); document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a> <a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-500 hover:text-white transition-colors">About</a> <a href="#menu" onclick="event.preventDefault(); document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-500 hover:text-white transition-colors">Menu</a> <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-500 hover:text-white transition-colors">Testimoni</a> <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a>
+      </div>
+      <p class="text-sm text-gray-600">© 2024 Rian Coffee. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Ultra smooth scroll with custom easing
+    function smoothScrollTo(element, duration = 3000) {
+      const targetPosition = element.offsetTop;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      let start = null;
+
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = easeInOutQuad(progress);
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    // Override all smooth scroll links
+    document.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        if (target) {
+          smoothScrollTo(target, 3500);
+        }
+      }
+    });
+
+    const defaultConfig = {
+      hero_tagline: "Where every cup tells a story.",
+      hero_description: "Nikmati momen tenang di tengah hiruk-pikuk hari.",
+      about_title: "Di Rian Coffee, kami percaya kopi lebih dari sekadar minuman",
+      about_image_url: "",
+      menu_headline: "Our Signature Brews",
+      maps_image_url: "",
+      contact_email: "hello@riancoffee.com",
+      contact_instagram: "@riancoffee",
+      background_color: "#0F0C0A",
+      accent_color: "#D4A574",
+      text_color: "#E8E4E0",
+      font_family: "Playfair Display",
+      font_size: 16
+    };
+
+    // Handle about image upload
+    function handleAboutImageUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const imageUrl = e.target.result;
+          document.getElementById('about-image').src = imageUrl;
+          localStorage.setItem('aboutImageUrl', imageUrl);
+          if (window.elementSdk) {
+            window.elementSdk.setConfig({ about_image_url: imageUrl });
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Handle maps image upload
+    function handleMapsImageUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const imageUrl = e.target.result;
+          document.getElementById('maps-image').src = imageUrl;
+          localStorage.setItem('mapsImageUrl', imageUrl);
+          if (window.elementSdk) {
+            window.elementSdk.setConfig({ maps_image_url: imageUrl });
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Load saved images from localStorage on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const savedAboutImage = localStorage.getItem('aboutImageUrl');
+      const savedMapsImage = localStorage.getItem('mapsImageUrl');
+      
+      if (savedAboutImage) {
+        document.getElementById('about-image').src = savedAboutImage;
+      }
+      
+      if (savedMapsImage) {
+        document.getElementById('maps-image').src = savedMapsImage;
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+      
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.classList.remove('hidden');
+        formSuccess.classList.add('hidden');
+      }, 5000);
+    });
+
+    // Element SDK initialization
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      
+      // Update text content
+      document.getElementById('hero-tagline').textContent = config.hero_tagline || defaultConfig.hero_tagline;
+      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('menu-headline').textContent = config.menu_headline || defaultConfig.menu_headline;
+      document.getElementById('contact-email').textContent = config.contact_email || defaultConfig.contact_email;
+      document.getElementById('contact-instagram').textContent = config.contact_instagram || defaultConfig.contact_instagram;
+      
+      // Update images
+      if (config.about_image_url) {
+        document.getElementById('about-image').src = config.about_image_url;
+      }
+      
+      // Update maps image
+      if (config.maps_image_url) {
+        document.getElementById('maps-image').src = config.maps_image_url;
+      }
+      
+      // Update font family
+      document.querySelectorAll('.font-display').forEach(el => {
+        el.style.fontFamily = `${customFont}, Georgia, serif`;
+      });
+      
+      // Update font sizes proportionally
+      document.querySelectorAll('h1').forEach(el => {
+        el.style.fontSize = `${baseSize * 4}px`;
+      });
+      document.querySelectorAll('h2').forEach(el => {
+        el.style.fontSize = `${baseSize * 2.5}px`;
+      });
+      document.querySelectorAll('h3').forEach(el => {
+        el.style.fontSize = `${baseSize * 1.25}px`;
+      });
+      document.querySelectorAll('p').forEach(el => {
+        el.style.fontSize = `${baseSize}px`;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+        ["hero_description", config.hero_description || defaultConfig.hero_description],
+        ["about_title", config.about_title || defaultConfig.about_title],
+        ["about_image_url", config.about_image_url || defaultConfig.about_image_url],
+        ["menu_headline", config.menu_headline || defaultConfig.menu_headline],
+        ["maps_image_url", config.maps_image_url || defaultConfig.maps_image_url],
+        ["contact_email", config.contact_email || defaultConfig.contact_email],
+        ["contact_instagram", config.contact_instagram || defaultConfig.contact_instagram]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c908dd9c46cc261',t:'MTc3MDI3NTA3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

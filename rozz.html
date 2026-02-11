@@ -36,19 +36,23 @@
       0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
       50% { box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); }
     }
+    .logo-placeholder {
+      aspect-ratio: 1;
+      background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+    }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full gradient-bg text-white overflow-auto">
   <div class="w-full min-h-full px-4 py-8">
-   <div class="max-w-md mx-auto"><!-- Header -->
-    <div class="text-center mb-8">
-     <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 mb-4 shadow-lg">
-      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
+   <div class="max-w-md mx-auto"><!-- Logo -->
+    <div class="flex justify-center mb-6">
+     <div class="logo-placeholder rounded-2xl overflow-hidden shadow-lg max-w-[120px] w-full"><img src="rozzxy/logo.png" alt="JB ROZXY Logo" class="w-full h-full object-contain" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200\'><svg class=\'w-12 h-12 text-gray-400\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\'/></svg></div>';">
      </div>
-     <h1 id="page-title" class="text-3xl font-bold glow-text mb-2">JB ROZXY</h1>
+    </div><!-- Header -->
+    <div class="text-center mb-8">
+     <h1 id="page-title" class="text-3xl font-bold glow-text mb-1">JB ROZXY</h1>
      <p class="text-cyan-300 text-sm">Payment Center</p>
     </div><!-- QR Code Section -->
     <div class="card-glass rounded-3xl p-6 mb-6">
@@ -66,7 +70,8 @@
        </div>
        <div class="flex-1">
         <p class="text-xs text-blue-300 mb-1">DANA</p>
-        <p id="dana-number" class="text-lg font-bold tracking-wider">082xxxxxxxxx</p>
+        <p id="dana-name" class="text-xs text-blue-200 font-medium mb-1">Atas Nama: M.Tapik</p>
+        <p id="dana-number" class="text-lg font-bold tracking-wider">081513336386</p>
        </div><button onclick="copyToClipboard('dana')" class="px-3 py-2 bg-blue-500/30 hover:bg-blue-500/50 rounded-lg text-xs font-medium transition-all"> 📋 Copy </button>
       </div>
      </div><!-- GoPay -->
@@ -77,7 +82,8 @@
        </div>
        <div class="flex-1">
         <p class="text-xs text-green-300 mb-1">GoPay</p>
-        <p id="gopay-number" class="text-lg font-bold tracking-wider">082xxxxxxxxx</p>
+        <p id="gopay-name" class="text-xs text-green-200 font-medium mb-1">Atas Nama: Rozzxy</p>
+        <p id="gopay-number" class="text-lg font-bold tracking-wider">085814957912</p>
        </div><button onclick="copyToClipboard('gopay')" class="px-3 py-2 bg-green-500/30 hover:bg-green-500/50 rounded-lg text-xs font-medium transition-all"> 📋 Copy </button>
       </div>
      </div>
@@ -107,20 +113,20 @@
        <div class="w-7 h-7 rounded-full bg-cyan-500/30 flex items-center justify-center flex-shrink-0 text-sm font-bold text-cyan-300">
         4
        </div>
-       <p class="text-sm text-gray-300">Kirim bukti transfer ke admin</p>
+       <p class="text-sm text-gray-300">Kirim bukti transfer ke admin via WhatsApp</p>
       </div>
      </div>
     </div><!-- Proof Guide Section -->
-    <div class="card-glass rounded-3xl p-6">
+    <div class="card-glass rounded-3xl p-6 mb-6">
      <div class="text-center mb-5">
       <div class="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-500/40 rounded-full px-4 py-2 mb-3"><span class="text-yellow-400">⚠️</span> <span class="text-yellow-300 text-sm font-medium">PENTING!</span>
       </div>
       <h3 class="text-base font-bold text-white mb-1">Pastikan Bukti Transfer</h3>
       <h3 class="text-base font-bold text-cyan-400">Menampilkan Detail Transaksi</h3>
      </div><!-- Example Proof Placeholder -->
-     <div class="qr-placeholder rounded-2xl overflow-hidden mx-auto max-w-[320px] border-2 border-dashed border-gray-600"><img src="rozz2.jpeg" alt="Contoh Bukti Transfer Benar dan Salah" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900\'><div class=\'text-center p-4\'><div class=\'grid grid-cols-2 gap-3 mb-3\'><div class=\'bg-red-500/20 border border-red-500/40 rounded-xl p-3\'><div class=\'text-3xl mb-1\'>❌</div><p class=\'text-xs text-red-400 font-medium\'>SALAH</p><p class=\'text-[10px] text-gray-400 mt-1\'>Tidak ada detail</p></div><div class=\'bg-green-500/20 border border-green-500/40 rounded-xl p-3\'><div class=\'text-3xl mb-1\'>✅</div><p class=\'text-xs text-green-400 font-medium\'>BENAR</p><p class=\'text-[10px] text-gray-400 mt-1\'>Detail lengkap</p></div></div><p class=\'text-xs text-gray-500\'>Tempelkan contoh bukti di sini</p></div></div>';">
+     <div class="qr-placeholder rounded-2xl overflow-hidden mx-auto max-w-[320px] border-2 border-dashed border-gray-600 mb-5"><img src="rozz2.jpeg" alt="Contoh Bukti Transfer Benar dan Salah" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900\'><div class=\'text-center p-4\'><div class=\'grid grid-cols-2 gap-3 mb-3\'><div class=\'bg-red-500/20 border border-red-500/40 rounded-xl p-3\'><div class=\'text-3xl mb-1\'>❌</div><p class=\'text-xs text-red-400 font-medium\'>SALAH</p><p class=\'text-[10px] text-gray-400 mt-1\'>Tidak ada detail</p></div><div class=\'bg-green-500/20 border border-green-500/40 rounded-xl p-3\'><div class=\'text-3xl mb-1\'>✅</div><p class=\'text-xs text-green-400 font-medium\'>BENAR</p><p class=\'text-[10px] text-gray-400 mt-1\'>Detail lengkap</p></div></div><p class=\'text-xs text-gray-500\'>Tempelkan contoh bukti di sini</p></div></div>';">
      </div><!-- Checklist -->
-     <div class="mt-5 bg-green-500/10 border border-green-500/30 rounded-2xl p-4">
+     <div class="bg-green-500/10 border border-green-500/30 rounded-2xl p-4 mb-4">
       <p class="text-sm font-semibold text-green-400 mb-3">✅ Bukti yang BENAR harus menampilkan:</p>
       <ul class="space-y-2 text-sm text-gray-300">
        <li class="flex items-center gap-2"><span class="text-green-400">•</span> Nama pengirim</li>
@@ -130,7 +136,7 @@
        <li class="flex items-center gap-2"><span class="text-green-400">•</span> Status "Berhasil" / "Success"</li>
       </ul>
      </div>
-     <div class="mt-4 bg-red-500/10 border border-red-500/30 rounded-2xl p-4">
+     <div class="bg-red-500/10 border border-red-500/30 rounded-2xl p-4">
       <p class="text-sm font-semibold text-red-400 mb-3">❌ Bukti yang SALAH:</p>
       <ul class="space-y-2 text-sm text-gray-300">
        <li class="flex items-center gap-2"><span class="text-red-400">•</span> Screenshot halaman input nominal saja</li>
@@ -138,6 +144,15 @@
        <li class="flex items-center gap-2"><span class="text-red-400">•</span> Bukti yang diedit/dimanipulasi</li>
       </ul>
      </div>
+    </div><!-- WhatsApp Confirmation Section -->
+    <div class="card-glass rounded-3xl p-6 mb-6">
+     <div class="text-center mb-4">
+      <h3 class="text-lg font-bold text-white mb-3">📲 Konfirmasi Transfer</h3>
+      <p class="text-sm text-gray-300 mb-4">Setelah transfer, kirim bukti screenshot ke WhatsApp admin</p>
+     </div><a id="whatsapp-link" href="https://whatsapp.com/channel/0029Vb76w5g29754hqkdjA2b" target="_blank" rel="noopener noreferrer" class="block w-full"> <button class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 rounded-2xl transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.116-4.922 5.98-4.922 10.978C2.022 19.751 6.612 24 12.267 24c1.646 0 3.254-.292 4.765-.84l3.85 1.284c.546.183 1.424.023 1.694-.46l1.289-2.046c.268-.423.26-1.429-.111-1.938l-1.52-2.129c.321-.644.52-1.36.52-2.134C23 10.882 18.102 5.979 12.04 5.979c-1.639 0-3.218.292-4.789.836" />
+       </svg> WhatsApp Admin </button> </a>
+     <p class="text-xs text-gray-400 text-center mt-3">🔗 Saluran WAB ROZZXY: Klik tombol di atas untuk membuka</p>
     </div><!-- Footer -->
     <div class="text-center mt-8 pb-4">
      <p class="text-gray-500 text-xs">© 2024 JB ROZXY • All Rights Reserved</p>
@@ -150,9 +165,10 @@
   <script>
     const defaultConfig = {
       page_title: 'JB ROZXY',
-      dana_number: '082xxxxxxxxx',
-      gopay_number: '082xxxxxxxxx',
+      dana_number: '081513336386',
+      gopay_number: '085814957912',
       guide_title: '📋 Panduan Pembayaran',
+      whatsapp_url: 'https://whatsapp.com/channel/0029Vb76w5g29754hqkdjA2b',
       font_family: 'Poppins',
       font_size: 16,
       background_color: '#1a1a2e',
@@ -173,6 +189,7 @@
       document.getElementById('dana-number').textContent = newConfig.dana_number || defaultConfig.dana_number;
       document.getElementById('gopay-number').textContent = newConfig.gopay_number || defaultConfig.gopay_number;
       document.getElementById('guide-title').textContent = newConfig.guide_title || defaultConfig.guide_title;
+      document.getElementById('whatsapp-link').href = newConfig.whatsapp_url || defaultConfig.whatsapp_url;
     }
 
     function mapToCapabilities(config) {
@@ -223,7 +240,8 @@
         ['page_title', config.page_title || defaultConfig.page_title],
         ['dana_number', config.dana_number || defaultConfig.dana_number],
         ['gopay_number', config.gopay_number || defaultConfig.gopay_number],
-        ['guide_title', config.guide_title || defaultConfig.guide_title]
+        ['guide_title', config.guide_title || defaultConfig.guide_title],
+        ['whatsapp_url', config.whatsapp_url || defaultConfig.whatsapp_url]
       ]);
     }
 
@@ -259,5 +277,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cc30b6d2076a28e',t:'MTc3MDgwNDUwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cc340f6e418fd71',t:'MTc3MDgwNjY5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Kopiku Tebet</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #1a1612;
+      --surface-color: #2a2420;
+      --text-color: #f5f0eb;
+      --primary-color: #c9a87c;
+      --secondary-color: #8b7355;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .menu-card { backdrop-filter: blur(10px); }
+    .coffee-steam {
+      animation: steam 3s ease-in-out infinite;
+    }
+    @keyframes steam {
+      0%, 100% { opacity: 0.3; transform: translateY(0) scale(1); }
+      50% { opacity: 0.8; transform: translateY(-10px) scale(1.1); }
+    }
+    .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .gallery-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201, 168, 124, 0.3);
+    }
+    .pattern-bg {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a87c' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-y-auto" style="background-color: var(--bg-color); color: var(--text-color);">
+  <div class="w-full"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(26, 22, 18, 0.95); backdrop-filter: blur(10px);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-16 md:h-20">
+      <div class="flex items-center gap-2">
+       <svg class="w-8 h-8 md:w-10 md:h-10" viewbox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="14" fill="var(--surface-color)" stroke="var(--primary-color)" stroke-width="2" /> <ellipse cx="20" cy="10" rx="8" ry="4" fill="none" stroke="var(--primary-color)" stroke-width="1.5" class="coffee-steam" /> <path d="M32 18c3 1 5 4 5 7s-2 6-5 7" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" />
+       </svg><span class="font-display text-lg md:text-xl font-semibold" style="color: var(--primary-color);">Cerita Kopiku</span>
+      </div><!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8"><a href="#home" class="nav-link text-sm font-medium hover:opacity-80">Home</a> <a href="#menu" class="nav-link text-sm font-medium hover:opacity-80">Menu</a> <a href="#about" class="nav-link text-sm font-medium hover:opacity-80">Tentang</a> <a href="#gallery" class="nav-link text-sm font-medium hover:opacity-80">Galeri</a> <a href="https://wa.me/6287888822020" target="_blank" rel="noopener noreferrer" class="btn-primary px-5 py-2 rounded-full text-sm font-semibold" style="color: var(--bg-color);"> Pesan Sekarang </a>
+      </div><!-- Mobile Menu Button --> <button id="mobileMenuBtn" class="md:hidden p-2" onclick="toggleMobileMenu()">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden" style="background: var(--surface-color);">
+     <div class="px-4 py-4 space-y-3"><a href="#home" class="block py-2 text-sm font-medium" onclick="toggleMobileMenu()">Home</a> <a href="#menu" class="block py-2 text-sm font-medium" onclick="toggleMobileMenu()">Menu</a> <a href="#about" class="block py-2 text-sm font-medium" onclick="toggleMobileMenu()">Tentang</a> <a href="#gallery" class="block py-2 text-sm font-medium" onclick="toggleMobileMenu()">Galeri</a> <a href="https://wa.me/6287888822020" target="_blank" rel="noopener noreferrer" class="block btn-primary px-5 py-2 rounded-full text-sm font-semibold text-center" style="color: var(--bg-color);"> Pesan Sekarang </a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="relative min-h-screen flex items-center pattern-bg pt-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/40"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+     <div class="max-w-3xl fade-in">
+      <p class="text-sm md:text-base uppercase tracking-widest mb-4" style="color: var(--primary-color);">☕ Coffee Shop Tebet</p>
+      <h1 id="heroTitle" class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Selamat Datang di<br><span style="color: var(--primary-color);">Cerita Kopiku Tebet</span></h1>
+      <p class="text-lg md:text-xl opacity-90 mb-4 leading-relaxed">Tempat Favoritmu untuk Menikmati Kopi, Teh, dan Momen Cerita di Tengah Hiruk Pikuk Tebet!</p>
+      <p class="text-base md:text-lg opacity-75 mb-8 leading-relaxed">Di Cerita Kopiku Tebet, setiap teguk kopi membawa cerita baru. Kami hadir sebagai spot cozy dan trendy yang sempurna untuk kamu yang ingin santai sendiri, bekerja dengan laptop, nongkrong bareng teman, atau sekadar menikmati quick bite sambil menikmati suasana casual yang nyaman.</p>
+      <div class="flex flex-wrap gap-4"><a href="#menu" class="btn-primary px-8 py-3 rounded-full font-semibold" style="color: var(--bg-color);"> Lihat Menu </a> <a href="#about" class="px-8 py-3 rounded-full font-semibold border-2 hover:bg-white/10 transition-colors" style="border-color: var(--primary-color); color: var(--primary-color);"> Tentang Kami </a>
+      </div>
+     </div>
+    </div><!-- Decorative Elements -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+     <svg class="w-6 h-6 opacity-50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+     </svg>
+    </div>
+   </section><!-- Menu Section -->
+   <section id="menu" class="py-20 md:py-28" style="background: var(--surface-color);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16">
+      <p class="text-sm uppercase tracking-widest mb-3" style="color: var(--primary-color);">Our Menu</p>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Menu Cerita Kopiku Tebet</h2>
+      <p class="opacity-70 max-w-2xl mx-auto">Pilihan kopi signature, minuman non-coffee, dan makanan lezat untuk menemani ceritamu</p>
+     </div><!-- Menu Tabs -->
+     <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12"><button onclick="showMenuTab('original')" class="menu-tab px-4 md:px-6 py-2 rounded-full text-sm font-medium transition-all" data-tab="original" style="background: var(--primary-color); color: var(--bg-color);"> Original Kopiku </button> <button onclick="showMenuTab('noncoffee')" class="menu-tab px-4 md:px-6 py-2 rounded-full text-sm font-medium transition-all" data-tab="noncoffee" style="background: var(--bg-color); color: var(--text-color);"> Non-Coffee </button> <button onclick="showMenuTab('espresso')" class="menu-tab px-4 md:px-6 py-2 rounded-full text-sm font-medium transition-all" data-tab="espresso" style="background: var(--bg-color); color: var(--text-color);"> Espresso Based </button> <button onclick="showMenuTab('food')" class="menu-tab px-4 md:px-6 py-2 rounded-full text-sm font-medium transition-all" data-tab="food" style="background: var(--bg-color); color: var(--text-color);"> Food </button>
+     </div><!-- Menu Content -->
+     <div id="menuContent" class="max-w-4xl mx-auto"><!-- Original Kopiku -->
+      <div id="menu-original" class="menu-panel grid gap-4">
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Kopiuk Creamy Coffee</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Small</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Large</span> <span class="font-semibold" style="color: var(--primary-color);">70K</span>
+         </div>
+        </div>
+        <p class="text-sm opacity-60">Signature creamy coffee dengan rasa yang lembut dan nikmat</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Kopiuk 2nd Variant Coffee</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Small</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Large</span> <span class="font-semibold" style="color: var(--primary-color);">70K</span>
+         </div>
+        </div>
+        <p class="text-sm opacity-60">Varian kedua dengan karakter rasa yang berbeda</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Kopiuk Less Sugar Coffee</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Small</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Large</span> <span class="font-semibold" style="color: var(--primary-color);">70K</span>
+         </div>
+        </div>
+        <p class="text-sm opacity-60">Pilihan lebih sehat dengan kadar gula rendah</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Kopiuk Salted Caramel Coffee</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Small</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Large</span> <span class="font-semibold" style="color: var(--primary-color);">80K</span>
+         </div>
+        </div>
+        <p class="text-sm opacity-60">Perpaduan manis karamel dan sentuhan garam yang unik</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Kopiuk Pandan Coffee</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Small</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Large</span> <span class="font-semibold" style="color: var(--primary-color);">80K</span>
+         </div>
+        </div>
+        <p class="text-sm opacity-60">Aroma pandan khas Indonesia dalam setiap tegukan</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Kopiuk Red Velvet Coffee</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Small</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Large</span> <span class="font-semibold" style="color: var(--primary-color);">80K</span>
+         </div>
+        </div>
+        <p class="text-sm opacity-60">Kombinasi kopi dengan cream cheese red velvet yang lezat</p>
+       </div>
+      </div><!-- Non-Coffee -->
+      <div id="menu-noncoffee" class="menu-panel hidden grid gap-4">
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Green Tea Latte</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Chocolate</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Hazelnut Chocolate</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Caramel Chocolate</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Lychee Tea Latte</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Black Tea</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">18K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Lemon Tea</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">18K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Milkshake Vanilla</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Milkshake Chocolate</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Milkshake Strawberry</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Espresso Based -->
+      <div id="menu-espresso" class="menu-panel hidden grid gap-4">
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Espresso</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">18K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Piccolo</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Americano</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">18K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Cappuccino</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Latte</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Vanilla Latte</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Caramel Latte</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Hazelnut Latte</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span> <span class="mx-2 opacity-30">|</span> <span class="text-sm opacity-70">Hot</span> <span class="font-semibold" style="color: var(--primary-color);">20K</span>
+         </div>
+        </div>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Coffee Cube</h3>
+         <div class="text-right"><span class="text-sm opacity-70">Ice</span> <span class="font-semibold" style="color: var(--primary-color);">25K</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Food -->
+      <div id="menu-food" class="menu-panel hidden grid gap-4">
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Mashed Potato Creamy Cheese</h3><span class="font-semibold" style="color: var(--primary-color);">30K</span>
+        </div>
+        <p class="text-sm opacity-60">Kentang tumbuk lembut dengan saus keju creamy</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Spaghetti Brulee</h3><span class="font-semibold" style="color: var(--primary-color);">80K</span>
+        </div>
+        <p class="text-sm opacity-60">Spaghetti dengan topping keju brulee yang crispy</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Lasagna</h3><span class="font-semibold" style="color: var(--primary-color);">80K</span>
+        </div>
+        <p class="text-sm opacity-60">Lasagna klasik dengan lapisan pasta dan saus meat</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Pizza Roll</h3><span class="font-semibold" style="color: var(--primary-color);">20K</span>
+        </div>
+        <p class="text-sm opacity-60">Pizza dalam bentuk roll yang praktis</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Premium Donut</h3><span class="font-semibold" style="color: var(--primary-color);">10K</span>
+        </div>
+        <p class="text-sm opacity-60">Donat premium dengan berbagai topping</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Cookies</h3><span class="font-semibold" style="color: var(--primary-color);">12K</span>
+        </div>
+        <p class="text-sm opacity-60">Cookies renyah dengan chocolate chips</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Cinnamon Roll</h3><span class="font-semibold" style="color: var(--primary-color);">20K</span>
+        </div>
+        <p class="text-sm opacity-60">Roti gulung kayu manis dengan cream cheese frosting</p>
+       </div>
+       <div class="menu-card rounded-2xl p-6" style="background: var(--bg-color);">
+        <div class="flex justify-between items-start mb-2">
+         <h3 class="font-display text-lg font-semibold">Croissant Sausage</h3><span class="font-semibold" style="color: var(--primary-color);">15K</span>
+        </div>
+        <p class="text-sm opacity-60">Croissant renyah dengan isian sosis</p>
+       </div>
+       <div class="mt-8 p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--primary-color)20, var(--secondary-color)20);">
+        <h4 class="font-display text-lg font-semibold mb-4" style="color: var(--primary-color);">Add-ons</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+         <div class="flex justify-between">
+          <span>Ice Cream Float</span><span style="color: var(--primary-color);">8K</span>
+         </div>
+         <div class="flex justify-between">
+          <span>Mineral Water</span><span style="color: var(--primary-color);">5K</span>
+         </div>
+         <div class="flex justify-between">
+          <span>Jelly Coffee</span><span style="color: var(--primary-color);">6K</span>
+         </div>
+         <div class="flex justify-between">
+          <span>Ice Cube</span><span style="color: var(--primary-color);">Free</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 md:py-28 pattern-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+       <p class="text-sm uppercase tracking-widest mb-3" style="color: var(--primary-color);">Tentang Kami</p>
+       <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Cerita Kopiku Tebet</h2>
+       <p class="opacity-80 mb-6 leading-relaxed">Cerita Kopiku Tebet adalah coffee shop cozy di kawasan Tebet yang menyajikan berbagai varian kopi signature, non-coffee drinks, dan makanan ringan hingga berat.</p>
+       <p class="opacity-80 mb-8 leading-relaxed">Kami populer sebagai tempat solo dining yang nyaman, spot kerja produktif dengan laptop, dan gathering kelompok atau mahasiswa. Suasana casual, cosy, dan trendy membuat setiap kunjungan terasa seperti pulang ke rumah kedua.</p>
+       <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="p-4 rounded-xl" style="background: var(--surface-color);">
+         <div class="text-2xl mb-2">
+          ☕
+         </div>
+         <h4 class="font-semibold mb-1">Great Coffee</h4>
+         <p class="text-sm opacity-60">Kopi berkualitas tinggi</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background: var(--surface-color);">
+         <div class="text-2xl mb-2">
+          🍵
+         </div>
+         <h4 class="font-semibold mb-1">Great Tea</h4>
+         <p class="text-sm opacity-60">Pilihan teh yang luar biasa</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background: var(--surface-color);">
+         <div class="text-2xl mb-2">
+          💻
+         </div>
+         <h4 class="font-semibold mb-1">Work Friendly</h4>
+         <p class="text-sm opacity-60">Cocok untuk bekerja</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background: var(--surface-color);">
+         <div class="text-2xl mb-2">
+          👥
+         </div>
+         <h4 class="font-semibold mb-1">Groups Welcome</h4>
+         <p class="text-sm opacity-60">Cocok untuk nongkrong</p>
+        </div>
+       </div>
+      </div>
+      <div class="space-y-6"><!-- Hours -->
+       <div class="p-6 rounded-2xl" style="background: var(--surface-color);">
+        <h3 class="font-display text-xl font-semibold mb-4 flex items-center gap-2"><span>🕐</span> Jam Buka</h3>
+        <div class="space-y-2 text-sm">
+         <div class="flex justify-between py-2 border-b" style="border-color: rgba(255,255,255,0.1);"><span>Senin - Sabtu</span> <span style="color: var(--primary-color);">12:00 – 22:00</span>
+         </div>
+         <div class="flex justify-between py-2"><span>Minggu</span> <span class="opacity-50">Tutup</span>
+         </div>
+        </div>
+       </div><!-- Location -->
+       <div class="p-6 rounded-2xl" style="background: var(--surface-color);">
+        <h3 class="font-display text-xl font-semibold mb-4 flex items-center gap-2"><span>📍</span> Lokasi</h3>
+        <p class="text-sm opacity-80 mb-4">Jl. Pal Batut Raya No.20, Menteng Dalam, Kec. Tebet, Jakarta, DKI Jakarta 12820</p><a href="https://maps.google.com/?q=Jl.+Pal+Batut+Raya+No.20,+Menteng+Dalam,+Tebet,+Jakarta" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium" style="color: var(--primary-color);"> Buka di Google Maps 
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+         </svg></a>
+       </div><!-- Contact -->
+       <div class="p-6 rounded-2xl" style="background: var(--surface-color);">
+        <h3 class="font-display text-xl font-semibold mb-4 flex items-center gap-2"><span>📞</span> Hubungi Kami</h3><a id="phoneLink" href="https://wa.me/6287888822020" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 btn-primary px-6 py-3 rounded-full font-semibold" style="color: var(--bg-color);">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+         </svg><span id="phoneNumber">0878-8882-2020</span> </a>
+       </div><!-- Services -->
+       <div class="flex flex-wrap gap-3"><span class="px-4 py-2 rounded-full text-sm" style="background: var(--primary-color)20; color: var(--primary-color);">🚚 Delivery</span> <span class="px-4 py-2 rounded-full text-sm" style="background: var(--primary-color)20; color: var(--primary-color);">🥡 Takeaway</span> <span class="px-4 py-2 rounded-full text-sm" style="background: var(--primary-color)20; color: var(--primary-color);">🍽️ Dine-in</span> <span class="px-4 py-2 rounded-full text-sm" style="background: var(--primary-color)20; color: var(--primary-color);">💳 Card Payment</span> <span class="px-4 py-2 rounded-full text-sm" style="background: var(--primary-color)20; color: var(--primary-color);">📱 NFC Payment</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Gallery Section -->
+   <section id="gallery" class="py-20 md:py-28" style="background: var(--surface-color);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16">
+      <p class="text-sm uppercase tracking-widest mb-3" style="color: var(--primary-color);">Galeri</p>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Galeri Cerita Kopiku Tebet</h2>
+      <p class="opacity-70 max-w-2xl mx-auto">Momen-momen terbaik dari kedai kami. Klik untuk upload foto Anda!</p>
+     </div>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-4"><!-- Gallery Items -->
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto1.png" alt="Galeri Cerita Kopiku 1" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto2.png" alt="Galeri Cerita Kopiku 2" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto3.png" alt="Galeri Cerita Kopiku 3" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto4.png" alt="Galeri Cerita Kopiku 4" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto5.png" alt="Galeri Cerita Kopiku 5" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto6.png" alt="Galeri Cerita Kopiku 6" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto7.png" alt="Galeri Cerita Kopiku 7" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto8.png" alt="Galeri Cerita Kopiku 8" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto9.png" alt="Galeri Cerita Kopiku 9" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto10.png" alt="Galeri Cerita Kopiku 10" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto11.png" alt="Galeri Cerita Kopiku 11" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+      <div class="gallery-item relative aspect-[4/5] rounded-2xl overflow-hidden"><img src="ceritakopiku/foto12.png" alt="Galeri Cerita Kopiku 12" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#4a3f38';">
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 pattern-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+       <svg class="w-8 h-8" viewbox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="14" fill="var(--surface-color)" stroke="var(--primary-color)" stroke-width="2" /> <ellipse cx="20" cy="10" rx="8" ry="4" fill="none" stroke="var(--primary-color)" stroke-width="1.5" /> <path d="M32 18c3 1 5 4 5 7s-2 6-5 7" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" />
+       </svg><span class="font-display text-xl font-semibold" style="color: var(--primary-color);">Cerita Kopiku Tebet</span>
+      </div>
+      <p class="opacity-60 mb-6">Datanglah dan tulis ceritamu sendiri di sini. ☕✨</p>
+      <p id="tagline" class="font-display text-2xl font-semibold mb-6" style="color: var(--primary-color);">Follow Your Heart!</p>
+      <p class="text-sm opacity-40">© 2024 Cerita Kopiku Tebet. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      hero_title: 'Selamat Datang di Cerita Kopiku Tebet',
+      hero_tagline: 'Follow Your Heart!',
+      phone_number: '0878-8882-2020',
+      background_color: '#1a1612',
+      surface_color: '#2a2420',
+      text_color: '#f5f0eb',
+      primary_color: '#c9a87c',
+      secondary_color: '#8b7355',
+      font_family: 'DM Sans',
+      font_size: 16
+    };
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Menu tabs
+    function showMenuTab(tab) {
+      // Hide all panels
+      document.querySelectorAll('.menu-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      
+      // Show selected panel
+      document.getElementById('menu-' + tab).classList.remove('hidden');
+      
+      // Update tab styles
+      document.querySelectorAll('.menu-tab').forEach(btn => {
+        if (btn.dataset.tab === tab) {
+          btn.style.background = 'var(--primary-color)';
+          btn.style.color = 'var(--bg-color)';
+        } else {
+          btn.style.background = 'var(--bg-color)';
+          btn.style.color = 'var(--text-color)';
+        }
+      });
+    }
+
+
+
+    // Element SDK initialization
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig: defaultConfig,
+        onConfigChange: async (config) => {
+          const heroTitle = document.getElementById('heroTitle');
+          const tagline = document.getElementById('tagline');
+          const phoneNumber = document.getElementById('phoneNumber');
+          const phoneLink = document.getElementById('phoneLink');
+
+          if (heroTitle) {
+            const title = config.hero_title || defaultConfig.hero_title;
+            heroTitle.innerHTML = title.includes('Cerita Kopiku') 
+              ? title.replace('Cerita Kopiku Tebet', '<span style="color: var(--primary-color);">Cerita Kopiku Tebet</span>')
+              : title;
+          }
+          
+          if (tagline) {
+            tagline.textContent = config.hero_tagline || defaultConfig.hero_tagline;
+          }
+          
+          if (phoneNumber && phoneLink) {
+            const phone = config.phone_number || defaultConfig.phone_number;
+            phoneNumber.textContent = phone;
+            const cleanPhone = phone.replace(/[^0-9]/g, '');
+            phoneLink.href = 'https://wa.me/62' + cleanPhone.substring(1);
+          }
+
+          // Apply colors
+          document.documentElement.style.setProperty('--bg-color', config.background_color || defaultConfig.background_color);
+          document.documentElement.style.setProperty('--surface-color', config.surface_color || defaultConfig.surface_color);
+          document.documentElement.style.setProperty('--text-color', config.text_color || defaultConfig.text_color);
+          document.documentElement.style.setProperty('--primary-color', config.primary_color || defaultConfig.primary_color);
+          document.documentElement.style.setProperty('--secondary-color', config.secondary_color || defaultConfig.secondary_color);
+
+          // Apply font
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+
+          // Apply font size
+          const fontSize = config.font_size || defaultConfig.font_size;
+          document.documentElement.style.fontSize = `${fontSize}px`;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+            },
+            {
+              get: () => config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => { config.secondary_color = value; window.elementSdk.setConfig({ secondary_color: value }); }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_tagline', config.hero_tagline || defaultConfig.hero_tagline],
+          ['phone_number', config.phone_number || defaultConfig.phone_number]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d3e2cf0d629df69',t:'MTc3MjA5NTYyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
